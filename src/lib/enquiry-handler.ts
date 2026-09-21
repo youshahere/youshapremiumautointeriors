@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { enquirySchema, type EnquiryVariant } from "@/lib/validation";
+import { sendEnquiryEmail, smtpConfigured } from "@/lib/mailer";
 
 const WINDOW_MS = 60_000;
 const MAX_PER_WINDOW = 5;
@@ -45,23 +46,28 @@ export async function handleEnquiry(request: Request, allowed: EnquiryVariant[])
   const payload = { ...enquiry, receivedAt: new Date().toISOString(), to: "info@yousha.in" };
 
   const webhook = process.env.FORM_WEBHOOK_URL;
-  if (webhook) {
-    try {
+  const useSmtp = smtpConfigured();
+
+  try {
+    if (useSmtp) await sendEnquiryEmail(enquiry);
+    if (webhook) {
       const res = await fetch(webhook, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error(`Webhook responded ${res.status}`);
-    } catch (err) {
-      console.error("[enquiry] delivery failed", err);
-      return NextResponse.json(
-        { ok: false, error: "We could not send your enquiry. Please call or message us on WhatsApp." },
-        { status: 502 },
-      );
     }
-  } else {
-    console.info("[enquiry] FORM_WEBHOOK_URL not set, logging only:", JSON.stringify(payload));
+  } catch (err) {
+    console.error("[enquiry] delivery failed", err);
+    return NextResponse.json(
+      { ok: false, error: "We could not send your enquiry. Please call or message us on WhatsApp." },
+      { status: 502 },
+    );
+  }
+
+  if (!useSmtp && !webhook) {
+    console.info("[enquiry] no delivery configured (ZOHO_SMTP_* or FORM_WEBHOOK_URL), logging only:", JSON.stringify(payload));
   }
 
   return NextResponse.json({ ok: true });

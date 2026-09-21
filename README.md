@@ -10,7 +10,7 @@ npm run dev      # http://localhost:3000
 npm run build && npm start
 ```
 
-Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GA_ID` and `FORM_WEBHOOK_URL`.
+Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GA_ID` and `ZOHO_SMTP_USER`, `ZOHO_SMTP_PASSWORD` (Zoho app password). Optional `ENQUIRY_TO`, `FORM_WEBHOOK_URL`.
 
 ## Where things live
 
