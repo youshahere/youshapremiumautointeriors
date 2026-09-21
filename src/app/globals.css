@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/*
+  Design tokens. Palette is taken from the workshop itself:
+  hide (dark saddle leather), thread (gold contrast stitching), stone (workbench
+  linen), saddle (tan leather), racing (British-racing-green hide, used only for
+  the accessibility line so it reads as its own world).
+*/
+@theme {
+  --color-hide: #1a1411;
+  --color-hide-2: #261d18;
+  --color-hide-3: #362a22;
+  --color-saddle: #7a4522;
+  --color-saddle-deep: #5c3319;
+  --color-thread: #c9a25b;
+  --color-thread-soft: #e2c78f;
+  --color-thread-deep: #7d5a1c;
+  --color-stone: #ebe6de;
+  --color-stone-2: #dfd8cc;
+  --color-paper: #f7f4ee;
+  --color-ink: #1f1814;
+  --color-muted: #5b4f45;
+  --color-racing: #1e3b32;
+  --color-racing-2: #2a4f43;
+  --color-oxblood: #5a2323;
+
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-stone);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-thread);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  ::selection {
+    background: var(--color-thread);
+    color: var(--color-hide);
+  }
+}
+
+@layer utilities {
+  /* --- Stitch language: the one signature that runs through the whole site --- */
+
+  /* A horizontal running stitch. Set colour with text-*, draw-in with .stitch-draw */
+  .stitch {
+    height: 2px;
+    color: var(--color-thread);
+    background-image: linear-gradient(to right, currentColor 0 9px, transparent 9px 16px);
+    background-size: 16px 2px;
+    background-repeat: repeat-x;
+  }
+  .stitch-v {
+    width: 2px;
+    color: var(--color-thread);
+    background-image: linear-gradient(to bottom, currentColor 0 9px, transparent 9px 16px);
+    background-size: 2px 16px;
+    background-repeat: repeat-y;
+  }
+
+  /* A leather panel with a stitched inset border. */
+  .panel-stitch {
+    position: relative;
+  }
+  .panel-stitch::after {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1.5px dashed var(--stitch-color, color-mix(in srgb, var(--color-thread) 55%, transparent));
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  /* Diamond-quilted dark leather with button points. */
+  .quilt {
+    background-color: var(--color-hide);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cpath d='M0 44 L44 0 L88 44 L44 88 Z' fill='none' stroke='%23c9a25b' stroke-opacity='.32' stroke-width='1.4' stroke-dasharray='6 5'/%3E%3Ccircle cx='0' cy='44' r='2.6' fill='%23c9a25b' fill-opacity='.4'/%3E%3Ccircle cx='88' cy='44' r='2.6' fill='%23c9a25b' fill-opacity='.4'/%3E%3Ccircle cx='44' cy='0' r='2.6' fill='%23c9a25b' fill-opacity='.4'/%3E%3Ccircle cx='44' cy='88' r='2.6' fill='%23c9a25b' fill-opacity='.4'/%3E%3C/svg%3E"),
+      radial-gradient(closest-side, rgb(255 255 255 / 0.055), rgb(255 255 255 / 0) 78%);
+    background-size:
+      88px 88px,
+      88px 88px;
+  }
+  .quilt-green {
+    background-color: var(--color-racing);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cpath d='M0 44 L44 0 L88 44 L44 88 Z' fill='none' stroke='%23e2c78f' stroke-opacity='.28' stroke-width='1.4' stroke-dasharray='6 5'/%3E%3Ccircle cx='0' cy='44' r='2.6' fill='%23e2c78f' fill-opacity='.35'/%3E%3Ccircle cx='88' cy='44' r='2.6' fill='%23e2c78f' fill-opacity='.35'/%3E%3Ccircle cx='44' cy='0' r='2.6' fill='%23e2c78f' fill-opacity='.35'/%3E%3Ccircle cx='44' cy='88' r='2.6' fill='%23e2c78f' fill-opacity='.35'/%3E%3C/svg%3E"),
+      radial-gradient(closest-side, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0) 78%);
+    background-size:
+      88px 88px,
+      88px 88px;
+  }
+
+  /* Fine leather grain overlay for stone sections. */
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .2 0 0 0 0 .1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--color-thread);
+  color: var(--color-hide);
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Before/after range input: keyboard-accessible drag handle */
+.ba-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: ew-resize;
+}
+.ba-range::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 100%;
+}
+.ba-range::-moz-range-track {
+  background: transparent;
+  height: 100%;
+}
+.ba-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 100%;
+  background: transparent;
+  border: 0;
+}
+.ba-range::-moz-range-thumb {
+  width: 44px;
+  height: 100%;
+  background: transparent;
+  border: 0;
+}
+.ba-range:focus-visible {
+  outline: none;
+}
+.ba-frame:has(.ba-range:focus-visible) {
+  outline: 3px solid var(--color-thread);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
