@@ -7,3 +7,5 @@ next-env.d.ts
 .env.local
 .vercel
 .playwright-mcp
+AGENTS.md
+CLAUDE.md
