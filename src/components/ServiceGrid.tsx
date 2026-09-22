@@ -24,8 +24,8 @@ export function ServiceCard({
       className={cn(
         "panel-stitch group relative flex h-full flex-col rounded-sm p-8 transition-[transform,background-color,box-shadow] duration-300 ease-out-quart hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10",
         featured
-          ? "bg-ink text-paper [--stitch-color:rgb(226_199_143/0.4)] hover:bg-ink-2"
-          : "bg-paper text-ink [--stitch-color:rgb(125_90_28/0.32)]",
+          ? "bg-ink text-paper [--stitch-color:rgb(217_138_87/0.4)] hover:bg-ink-2"
+          : "bg-paper text-ink [--stitch-color:rgb(143_70_32/0.32)]",
       )}
     >
       <Icon className={cn("size-9 stroke-[1.4]", featured ? "text-copper-light" : "text-muted")} aria-hidden="true" />

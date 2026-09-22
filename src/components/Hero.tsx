@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { photos, type ImageKey } from "@/data/images";
 import { Container } from "@/components/Container";
 import { StampSeal } from "@/components/StampSeal";
+import { Watermark } from "@/components/Watermark";
 import { Reveal } from "@/components/Reveal";
 import { cn } from "@/lib/utils";
 
@@ -13,23 +14,22 @@ type Props = {
   actions?: ReactNode;
   trust?: string;
   size?: "home" | "page";
-  tone?: "hide" | "racing";
   image?: ImageKey;
   children?: ReactNode;
 };
 
-/** Reusable page-top banner: quilted hide with the headline set large. */
-export function Hero({ eyebrow, title, sub, actions, trust, size = "page", tone = "hide", image, children }: Props) {
+/** Reusable page-top banner: ink ground, copper watermark, headline set large. */
+export function Hero({ eyebrow, title, sub, actions, trust, size = "page", image, children }: Props) {
   const home = size === "home";
   const photo = image ? photos[image] : null;
   return (
     <section
       className={cn(
-        "relative overflow-hidden text-paper",
-        tone === "racing" ? "quilt-green" : "quilt",
+        "relative overflow-hidden bg-ink text-paper",
         home ? "py-20 sm:py-28 lg:py-36" : "py-16 sm:py-20 lg:py-24",
       )}
     >
+      <Watermark tone="copper" position="corner-tl" className="size-96" />
       {photo && (
         <div
           aria-hidden="true"

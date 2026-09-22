@@ -64,7 +64,7 @@ export default function MedicalPage() {
 
       <section className="bg-stone">
         <Container className="py-20">
-          <div className="panel-stitch rounded-sm bg-paper p-10 sm:p-14 [--stitch-color:rgb(125_90_28/0.35)]">
+          <div className="panel-stitch rounded-sm bg-paper p-10 sm:p-14 [--stitch-color:rgb(143_70_32/0.35)]">
             <h2 className="text-[clamp(1.8rem,3.6vw,2.75rem)]">{customProjects.heading}</h2>
             <p className="mt-4 max-w-2xl text-lg text-muted">{customProjects.body}</p>
             <div className="mt-8">

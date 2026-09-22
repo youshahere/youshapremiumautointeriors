@@ -11,6 +11,7 @@ import { WhoWeServe } from "@/components/WhoWeServe";
 import { VehicleBadges } from "@/components/VehicleBadges";
 import { GalleryPreview } from "@/components/GalleryGrid";
 import { CTASection } from "@/components/CTASection";
+import { Watermark } from "@/components/Watermark";
 import { Reveal, StitchDraw } from "@/components/Reveal";
 import { accessibility, heritage, hero, vehicles, whatWeDo } from "@/data/content";
 import { whatsappLink } from "@/data/site";
@@ -61,8 +62,9 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="quilt-green text-paper">
-        <Container className="grid items-center gap-10 py-20 sm:py-24 lg:grid-cols-[1.3fr_1fr]">
+      <section className="relative overflow-hidden bg-ink text-paper">
+        <Watermark tone="copper" position="corner-br" className="size-96" />
+        <Container className="relative grid items-center gap-10 py-20 sm:py-24 lg:grid-cols-[1.3fr_1fr]">
           <Reveal>
             <SectionHeading
               tone="dark"

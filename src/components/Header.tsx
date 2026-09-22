@@ -8,6 +8,7 @@ import { ChevronDown, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { nav, site, whatsappLink } from "@/data/site";
 import { services, specialistLinks } from "@/data/services";
 import { Logo } from "@/components/Logo";
+import { Watermark } from "@/components/Watermark";
 import { Button } from "@/components/Button";
 import { cn, track } from "@/lib/utils";
 
@@ -95,7 +96,7 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.18 }}
-                      className="panel-stitch absolute left-1/2 top-full mt-3 w-[34rem] -translate-x-1/2 rounded-sm bg-ink-2 p-7 shadow-2xl shadow-black/50 [--stitch-color:rgb(201_162_91/0.3)]"
+                      className="panel-stitch absolute left-1/2 top-full mt-3 w-[34rem] -translate-x-1/2 rounded-sm bg-ink-2 p-7 shadow-2xl shadow-black/50 [--stitch-color:rgb(177_90_43/0.3)]"
                     >
                       <Link
                         href="/services"
@@ -188,9 +189,10 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="quilt fixed inset-x-0 bottom-0 top-[4.5rem] overflow-y-auto xl:hidden"
+            className="fixed inset-x-0 bottom-0 top-[4.5rem] overflow-y-auto bg-ink xl:hidden"
           >
-            <nav aria-label="Mobile" className="mx-auto max-w-xl px-6 py-8">
+            <nav aria-label="Mobile" className="relative mx-auto max-w-xl px-6 py-8">
+              <Watermark tone="copper" position="corner-tl" className="size-56" />
               <ul className="divide-y divide-copper/20">
                 <li>
                   <Link href="/" className="block py-4 font-display text-2xl text-paper">

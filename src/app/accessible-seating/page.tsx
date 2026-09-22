@@ -25,7 +25,6 @@ export default function AccessibleSeatingPage() {
   return (
     <>
       <Hero
-        tone="racing"
         eyebrow={accessibility.eyebrow}
         title={accessibility.headline}
         sub={accessibility.intro[0]}
@@ -94,7 +93,6 @@ export default function AccessibleSeatingPage() {
       </section>
 
       <CTASection
-        tone="racing"
         title="Comfort should never be a compromise."
         body="Talk to us about the person, the vehicle and what would make every journey easier."
         emphasis={accessibility.tagline}

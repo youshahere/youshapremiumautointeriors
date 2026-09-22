@@ -17,7 +17,7 @@ export function PhotoFigure({
 }) {
   const photo = photos[image];
   return (
-    <figure className={cn("panel-stitch overflow-hidden rounded-sm bg-ink p-3 [--stitch-color:rgb(201_162_91/0.35)]", className)}>
+    <figure className={cn("panel-stitch overflow-hidden rounded-sm bg-ink p-3 [--stitch-color:rgb(177_90_43/0.35)]", className)}>
       <Image
         src={photo.src}
         alt={photo.alt}

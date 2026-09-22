@@ -2,6 +2,7 @@ import { Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { Reveal, StitchDraw } from "@/components/Reveal";
+import { Watermark } from "@/components/Watermark";
 import { finalCta } from "@/data/content";
 import { site, whatsappLink } from "@/data/site";
 
@@ -10,17 +11,16 @@ export function CTASection({
   body = finalCta.body,
   emphasis = finalCta.emphasis,
   waMessage = "Hi Yousha, I'd like to discuss my vehicle's interior.",
-  tone = "hide",
 }: {
   title?: string;
   body?: string;
   emphasis?: string;
   waMessage?: string;
-  tone?: "hide" | "racing";
 }) {
   return (
-    <section className={tone === "racing" ? "quilt-green" : "quilt"}>
-      <Container className="py-20 sm:py-24">
+    <section className="relative overflow-hidden bg-ink">
+      <Watermark tone="copper" position="center" className="size-[28rem] opacity-[0.04]" />
+      <Container className="relative py-20 sm:py-24">
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
             <StitchDraw className="mx-auto mb-10 w-24" />

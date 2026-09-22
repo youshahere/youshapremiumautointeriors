@@ -157,7 +157,7 @@ export function EnquiryForm({
 
   if (status === "sent") {
     return (
-      <div role="status" className={cn("panel-stitch rounded-sm bg-paper p-8 [--stitch-color:rgb(125_90_28/0.35)]", className)}>
+      <div role="status" className={cn("panel-stitch rounded-sm bg-paper p-8 [--stitch-color:rgb(143_70_32/0.35)]", className)}>
         <CheckCircle2 className="size-10 text-[#1f7a4d]" aria-hidden="true" />
         <h3 className="mt-4 text-2xl">Thank you. We have your enquiry.</h3>
         <p className="mt-3 text-muted">
@@ -183,7 +183,7 @@ export function EnquiryForm({
     <form
       onSubmit={onSubmit}
       noValidate
-      className={cn("panel-stitch rounded-sm bg-paper p-6 sm:p-8 [--stitch-color:rgb(125_90_28/0.35)]", className)}
+      className={cn("panel-stitch rounded-sm bg-paper p-6 sm:p-8 [--stitch-color:rgb(143_70_32/0.35)]", className)}
     >
       <input type="hidden" {...register("variant")} />
       {/* Honeypot */}

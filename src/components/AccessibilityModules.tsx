@@ -2,6 +2,7 @@ import { ArrowLeftRight, Armchair, Move, RotateCw, ShieldAlert, Wrench } from "l
 import type { LucideIcon } from "lucide-react";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
+import { Watermark } from "@/components/Watermark";
 import { Reveal } from "@/components/Reveal";
 import { accessibility } from "@/data/content";
 
@@ -23,7 +24,7 @@ export function AccessibilityModules() {
               return (
                 <li key={m.title} className={i < 3 ? "lg:col-span-2" : "lg:col-span-3"}>
                   <Reveal delay={(i % 3) * 0.07} className="h-full">
-                    <div className="panel-stitch h-full rounded-sm bg-ink p-8 text-paper [--stitch-color:rgb(226_199_143/0.4)]">
+                    <div className="panel-stitch h-full rounded-sm bg-ink p-8 text-paper [--stitch-color:rgb(217_138_87/0.4)]">
                       <span className="flex size-14 items-center justify-center rounded-full border border-copper-light/60 text-copper-light">
                         <Icon className="size-7 stroke-[1.4]" aria-hidden="true" />
                       </span>
@@ -38,8 +39,9 @@ export function AccessibilityModules() {
         </Container>
       </section>
 
-      <section className="quilt-green">
-        <Container className="py-20 text-center sm:py-24">
+      <section className="relative overflow-hidden bg-ink">
+        <Watermark tone="copper" position="center" className="size-[26rem]" />
+        <Container className="relative py-20 text-center sm:py-24">
           <Reveal>
             <blockquote className="mx-auto max-w-4xl">
               <p className="font-display text-[clamp(1.6rem,3.6vw,2.75rem)] italic leading-tight text-paper">

@@ -4,13 +4,15 @@ import { nav, site, whatsappLink } from "@/data/site";
 import { services } from "@/data/services";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
+import { Watermark } from "@/components/Watermark";
 
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-ink text-[#cfc3b2]">
-      <div aria-hidden="true" className="stitch mx-auto max-w-7xl" />
-      <Container className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
+    <footer className="relative overflow-hidden bg-ink text-[#cfc3b2]">
+      <Watermark tone="copper" position="corner-br" />
+      <div aria-hidden="true" className="stitch relative mx-auto max-w-7xl" />
+      <Container className="relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
         <div>
           <Logo />
           <p className="mt-6 max-w-xs font-display text-xl leading-snug text-paper">
