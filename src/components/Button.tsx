@@ -10,14 +10,14 @@ const button = cva(
   {
     variants: {
       variant: {
-        primary: "bg-thread text-hide hover:bg-thread-soft",
-        dark: "bg-hide text-paper hover:bg-hide-3",
+        primary: "bg-copper text-ink hover:bg-copper-light",
+        dark: "bg-ink text-paper hover:bg-ink-3",
         outline:
-          "border border-thread text-thread-soft hover:bg-thread hover:text-hide",
+          "border border-copper text-copper-light hover:bg-copper hover:text-ink",
         outlineDark:
-          "border border-hide text-hide hover:bg-hide hover:text-paper",
+          "border border-ink text-ink hover:bg-ink hover:text-paper",
         whatsapp: "bg-[#1f7a4d] text-white hover:bg-[#25915c]",
-        ghost: "text-current underline decoration-thread decoration-2 underline-offset-8 hover:decoration-4",
+        ghost: "text-current underline decoration-copper decoration-2 underline-offset-8 hover:decoration-4",
       },
       size: {
         md: "min-h-12 px-6 py-3 text-[0.95rem]",

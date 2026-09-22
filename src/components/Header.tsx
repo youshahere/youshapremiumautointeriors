@@ -63,7 +63,7 @@ export function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-300",
-        scrolled ? "border-thread/25 bg-hide/95 backdrop-blur-md" : "border-transparent bg-hide",
+        scrolled ? "border-copper/25 bg-ink/95 backdrop-blur-md" : "border-transparent bg-ink",
       )}
     >
       <div className="mx-auto flex h-[4.5rem] w-full max-w-[90rem] items-center justify-between gap-6 px-5 sm:px-8 lg:px-12">
@@ -82,7 +82,7 @@ export function Header() {
                   onClick={() => setOpen((v) => !v)}
                   className={cn(
                     "flex items-center gap-1.5 whitespace-nowrap rounded-sm px-3 py-2 text-[0.92rem] font-medium transition-colors",
-                    isActive("/services") ? "text-thread" : "text-[#e6dccb] hover:text-thread",
+                    isActive("/services") ? "text-copper" : "text-[#e6dccb] hover:text-copper",
                   )}
                 >
                   {item.label}
@@ -95,11 +95,11 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.18 }}
-                      className="panel-stitch absolute left-1/2 top-full mt-3 w-[34rem] -translate-x-1/2 rounded-sm bg-hide-2 p-7 shadow-2xl shadow-black/50 [--stitch-color:rgb(201_162_91/0.3)]"
+                      className="panel-stitch absolute left-1/2 top-full mt-3 w-[34rem] -translate-x-1/2 rounded-sm bg-ink-2 p-7 shadow-2xl shadow-black/50 [--stitch-color:rgb(201_162_91/0.3)]"
                     >
                       <Link
                         href="/services"
-                        className="mb-4 block text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-thread hover:text-thread-soft"
+                        className="mb-4 block text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-copper hover:text-copper-light"
                       >
                         All services →
                       </Link>
@@ -108,9 +108,9 @@ export function Header() {
                           <li key={s.slug}>
                             <Link
                               href={`/services/${s.slug}`}
-                              className="flex items-center gap-3 rounded-sm px-2 py-2.5 text-[0.9rem] text-[#e6dccb] transition-colors hover:bg-hide-3 hover:text-thread-soft"
+                              className="flex items-center gap-3 rounded-sm px-2 py-2.5 text-[0.9rem] text-[#e6dccb] transition-colors hover:bg-ink-3 hover:text-copper-light"
                             >
-                              <s.icon className="size-4 shrink-0 text-thread" aria-hidden="true" />
+                              <s.icon className="size-4 shrink-0 text-copper" aria-hidden="true" />
                               {s.navLabel}
                             </Link>
                           </li>
@@ -119,9 +119,9 @@ export function Header() {
                           <li key={s.href}>
                             <Link
                               href={s.href}
-                              className="flex items-center gap-3 rounded-sm px-2 py-2.5 text-[0.9rem] text-[#e6dccb] transition-colors hover:bg-hide-3 hover:text-thread-soft"
+                              className="flex items-center gap-3 rounded-sm px-2 py-2.5 text-[0.9rem] text-[#e6dccb] transition-colors hover:bg-ink-3 hover:text-copper-light"
                             >
-                              <s.icon className="size-4 shrink-0 text-thread" aria-hidden="true" />
+                              <s.icon className="size-4 shrink-0 text-copper" aria-hidden="true" />
                               {s.navLabel}
                             </Link>
                           </li>
@@ -138,7 +138,7 @@ export function Header() {
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
                   "whitespace-nowrap rounded-sm px-3 py-2 text-[0.92rem] font-medium transition-colors",
-                  isActive(item.href) ? "text-thread" : "text-[#e6dccb] hover:text-thread",
+                  isActive(item.href) ? "text-copper" : "text-[#e6dccb] hover:text-copper",
                 )}
               >
                 {item.label}
@@ -163,7 +163,7 @@ export function Header() {
             href={site.phoneHref}
             onClick={() => track("call_click", { label: "header-mobile" })}
             aria-label={`Call ${site.phone}`}
-            className="flex size-11 items-center justify-center rounded-sm border border-thread/60 text-thread"
+            className="flex size-11 items-center justify-center rounded-sm border border-copper/60 text-copper"
           >
             <Phone className="size-5" aria-hidden="true" />
           </a>
@@ -173,7 +173,7 @@ export function Header() {
             aria-expanded={menu}
             aria-controls="mobile-menu"
             aria-label={menu ? "Close menu" : "Open menu"}
-            className="flex size-11 items-center justify-center rounded-sm bg-thread text-hide"
+            className="flex size-11 items-center justify-center rounded-sm bg-copper text-ink"
           >
             {menu ? <X className="size-6" aria-hidden="true" /> : <Menu className="size-6" aria-hidden="true" />}
           </button>
@@ -191,7 +191,7 @@ export function Header() {
             className="quilt fixed inset-x-0 bottom-0 top-[4.5rem] overflow-y-auto xl:hidden"
           >
             <nav aria-label="Mobile" className="mx-auto max-w-xl px-6 py-8">
-              <ul className="divide-y divide-thread/20">
+              <ul className="divide-y divide-copper/20">
                 <li>
                   <Link href="/" className="block py-4 font-display text-2xl text-paper">
                     Home
@@ -201,18 +201,18 @@ export function Header() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={cn("block py-4 font-display text-2xl", isActive(item.href) ? "text-thread" : "text-paper")}
+                      className={cn("block py-4 font-display text-2xl", isActive(item.href) ? "text-copper" : "text-paper")}
                     >
                       {item.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <p className="mb-3 mt-8 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-thread">Services</p>
+              <p className="mb-3 mt-8 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-copper">Services</p>
               <ul className="grid gap-1">
                 {[...services.map((s) => ({ href: `/services/${s.slug}`, label: s.navLabel })), ...specialistLinks.map((s) => ({ href: s.href, label: s.navLabel }))].map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="block py-2 text-[#dfd3bf] hover:text-thread">
+                    <Link href={l.href} className="block py-2 text-[#dfd3bf] hover:text-copper">
                       {l.label}
                     </Link>
                   </li>

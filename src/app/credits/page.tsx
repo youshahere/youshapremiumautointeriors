@@ -20,13 +20,13 @@ export default function CreditsPage() {
       />
       <section className="bg-stone">
         <Container className="py-16 sm:py-20">
-          <ul className="max-w-4xl divide-y divide-hide/15 border-y border-hide/15">
+          <ul className="max-w-4xl divide-y divide-ink/15 border-y border-ink/15">
             {Object.values(photos).map((p) => (
               <li key={p.src} className="py-5">
                 <p className="font-display text-xl">{p.credit.title}</p>
                 <p className="mt-1 text-muted">
                   {p.credit.author}. Licence: {p.credit.license}.{" "}
-                  <a href={p.credit.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-saddle underline underline-offset-4">
+                  <a href={p.credit.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-muted underline underline-offset-4">
                     Source
                   </a>
                 </p>

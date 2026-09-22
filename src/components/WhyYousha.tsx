@@ -21,7 +21,7 @@ export function WhyYousha({ condensed = false }: { condensed?: boolean }) {
             <li key={item.title}>
               <Reveal delay={(i % 3) * 0.07}>
                 <div className="flex gap-5">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-hide text-thread">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-ink text-copper">
                     <item.icon className="size-6 stroke-[1.5]" aria-hidden="true" />
                   </span>
                   <div>

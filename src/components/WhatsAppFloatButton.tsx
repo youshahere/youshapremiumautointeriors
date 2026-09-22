@@ -30,7 +30,7 @@ export function WhatsAppFloatButton() {
             href={site.phoneHref}
             onClick={() => track("call_click", { label: "float" })}
             aria-label={`Call ${site.phone}`}
-            className="flex size-14 items-center justify-center rounded-full bg-thread text-hide shadow-lg shadow-black/30 transition-transform hover:scale-105 xl:hidden"
+            className="flex size-14 items-center justify-center rounded-full bg-copper text-ink shadow-lg shadow-black/30 transition-transform hover:scale-105 xl:hidden"
           >
             <Phone className="size-6" aria-hidden="true" />
           </a>

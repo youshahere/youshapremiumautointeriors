@@ -24,17 +24,17 @@ export function ServiceCard({
       className={cn(
         "panel-stitch group relative flex h-full flex-col rounded-sm p-8 transition-[transform,background-color,box-shadow] duration-300 ease-out-quart hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10",
         featured
-          ? "bg-racing text-paper [--stitch-color:rgb(226_199_143/0.4)] hover:bg-racing-2"
+          ? "bg-ink text-paper [--stitch-color:rgb(226_199_143/0.4)] hover:bg-ink-2"
           : "bg-paper text-ink [--stitch-color:rgb(125_90_28/0.32)]",
       )}
     >
-      <Icon className={cn("size-9 stroke-[1.4]", featured ? "text-thread-soft" : "text-saddle")} aria-hidden="true" />
+      <Icon className={cn("size-9 stroke-[1.4]", featured ? "text-copper-light" : "text-muted")} aria-hidden="true" />
       <h3 className="mt-6 text-[1.4rem] leading-tight">{title}</h3>
       <p className={cn("mt-3 flex-1 text-[0.97rem]", featured ? "text-[#cfd9d3]" : "text-muted")}>{blurb}</p>
       <span
         className={cn(
           "mt-6 inline-flex items-center gap-1.5 text-sm font-semibold",
-          featured ? "text-thread-soft" : "text-saddle",
+          featured ? "text-copper-light" : "text-muted",
         )}
       >
         Learn more

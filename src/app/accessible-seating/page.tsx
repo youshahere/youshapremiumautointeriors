@@ -47,7 +47,7 @@ export default function AccessibleSeatingPage() {
           </>
         }
       >
-        <p className="mt-10 font-display text-2xl italic text-thread-soft">{accessibility.tagline}</p>
+        <p className="mt-10 font-display text-2xl italic text-copper-light">{accessibility.tagline}</p>
       </Hero>
 
       <section className="bg-paper">

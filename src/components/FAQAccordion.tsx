@@ -10,7 +10,7 @@ export function FAQAccordion({ items, tone = "light" }: { items: FAQ[]; tone?: "
   const uid = useId();
   const dark = tone === "dark";
   return (
-    <div className={cn("divide-y border-y", dark ? "divide-thread/25 border-thread/25" : "divide-hide/15 border-hide/15")}>
+    <div className={cn("divide-y border-y", dark ? "divide-copper/25 border-copper/25" : "divide-ink/15 border-ink/15")}>
       {items.map((item, i) => {
         const isOpen = open === i;
         return (
@@ -24,10 +24,10 @@ export function FAQAccordion({ items, tone = "light" }: { items: FAQ[]; tone?: "
                 onClick={() => setOpen(isOpen ? null : i)}
                 className="flex w-full items-center justify-between gap-6 py-6 text-left font-display text-[1.3rem] font-medium leading-snug"
               >
-                <span className={dark ? "text-paper" : "text-hide"}>{item.q}</span>
+                <span className={dark ? "text-paper" : "text-ink"}>{item.q}</span>
                 <Plus
                   aria-hidden="true"
-                  className={cn("size-6 shrink-0 text-thread-deep transition-transform duration-300", dark && "text-thread", isOpen && "rotate-45")}
+                  className={cn("size-6 shrink-0 text-copper-deep transition-transform duration-300", dark && "text-copper", isOpen && "rotate-45")}
                 />
               </button>
             </h3>

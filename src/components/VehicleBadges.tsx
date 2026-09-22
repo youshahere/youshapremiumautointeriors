@@ -8,7 +8,7 @@ export function VehicleBadges({ items, tone = "light" }: { items: string[]; tone
           key={v}
           className={cn(
             "rounded-full border px-5 py-2.5 text-[0.95rem] font-medium",
-            tone === "dark" ? "border-thread/50 text-paper" : "border-hide/25 bg-paper text-hide",
+            tone === "dark" ? "border-copper/50 text-paper" : "border-ink/25 bg-paper text-ink",
           )}
         >
           {v}

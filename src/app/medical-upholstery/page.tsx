@@ -40,8 +40,8 @@ export default function MedicalPage() {
           </div>
           <ul className="grid gap-x-8 sm:grid-cols-2">
             {medical.items.map((item) => (
-              <li key={item} className="flex items-start gap-3 border-b border-hide/12 py-4">
-                <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-hide text-thread">
+              <li key={item} className="flex items-start gap-3 border-b border-ink/12 py-4">
+                <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-ink text-copper">
                   <Check className="size-3.5" strokeWidth={3} aria-hidden="true" />
                 </span>
                 <span className="text-[1.02rem] font-medium">{item}</span>

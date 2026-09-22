@@ -37,9 +37,9 @@ export default function HomePage() {
         }
       />
 
-      <section className="bg-hide-2 text-paper">
+      <section className="bg-ink-2 text-paper">
         <Container className="grid gap-8 py-14 md:grid-cols-[auto_1fr_auto] md:items-center md:gap-12">
-          <p className="font-display text-6xl italic text-thread md:text-7xl">3</p>
+          <p className="font-display text-6xl italic text-copper md:text-7xl">3</p>
           <div>
             <p className="font-display text-2xl leading-snug sm:text-3xl">
               From Noor Bhai “Seatwale” in the 1950s, to Sajid Akhter in the 1980s, to Yousha today.
@@ -88,7 +88,7 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="border-l-2 border-thread pl-6 font-display text-2xl italic leading-snug text-thread-soft sm:text-3xl">
+            <p className="border-l-2 border-copper pl-6 font-display text-2xl italic leading-snug text-copper-light sm:text-3xl">
               {accessibility.tagline}
             </p>
             <p className="mt-6 pl-6 text-[#cfd9d3]">{accessibility.philosophy}</p>
@@ -121,10 +121,10 @@ export default function HomePage() {
       <section className="bg-stone">
         <Container className="py-20">
           <SectionHeading eyebrow="Vehicles we work with" title="From everyday hatchbacks to heritage classics." />
-          <StitchDraw className="my-10 w-full max-w-md" tone="text-thread-deep/60" />
+          <StitchDraw className="my-10 w-full max-w-md" tone="text-copper-deep/60" />
           <VehicleBadges items={vehicles} />
           <p className="mt-8 text-[0.97rem] text-muted">
-            Not sure yours is on the list? <Link href="/contact" className="font-semibold text-saddle underline underline-offset-4">Ask us</Link>. If it has a seat, we can look at it.
+            Not sure yours is on the list? <Link href="/contact" className="font-semibold text-muted underline underline-offset-4">Ask us</Link>. If it has a seat, we can look at it.
           </p>
         </Container>
       </section>

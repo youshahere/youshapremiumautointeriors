@@ -111,7 +111,7 @@ const variants: Record<
 };
 
 const inputClass =
-  "w-full rounded-sm border border-hide/30 bg-white px-4 py-3 text-base text-ink placeholder:text-[#8a7d70] focus:border-saddle focus:outline-none focus-visible:outline-3 focus-visible:outline-thread";
+  "w-full rounded-sm border border-ink/30 bg-white px-4 py-3 text-base text-ink placeholder:text-[#8a7d70] focus:border-muted focus:outline-none focus-visible:outline-3 focus-visible:outline-copper";
 
 export function EnquiryForm({
   variant = "quote",
@@ -168,7 +168,7 @@ export function EnquiryForm({
             <MessageCircle className="size-5" aria-hidden="true" />
             Send photos on WhatsApp
           </Button>
-          <button type="button" onClick={() => setStatus("idle")} className="px-4 py-3 font-semibold text-saddle underline underline-offset-4">
+          <button type="button" onClick={() => setStatus("idle")} className="px-4 py-3 font-semibold text-muted underline underline-offset-4">
             Send another enquiry
           </button>
         </div>
@@ -203,7 +203,7 @@ export function EnquiryForm({
               <label htmlFor={id} className="mb-2 block text-[0.92rem] font-semibold">
                 {f.label}
                 {f.required && (
-                  <span aria-hidden="true" className="text-saddle">
+                  <span aria-hidden="true" className="text-muted">
                     {" "}
                     *
                   </span>
@@ -246,7 +246,7 @@ export function EnquiryForm({
           <label htmlFor={`${variant}-message`} className="mb-2 block text-[0.92rem] font-semibold">
             {cfg.messageLabel}
             {cfg.messageRequired && (
-              <span aria-hidden="true" className="text-saddle">
+              <span aria-hidden="true" className="text-muted">
                 {" "}
                 *
               </span>
@@ -286,7 +286,7 @@ export function EnquiryForm({
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex min-h-14 items-center justify-center gap-2 rounded-sm bg-hide px-8 py-4 font-semibold text-paper transition-colors hover:bg-hide-3 disabled:opacity-70"
+          className="inline-flex min-h-14 items-center justify-center gap-2 rounded-sm bg-ink px-8 py-4 font-semibold text-paper transition-colors hover:bg-ink-3 disabled:opacity-70"
         >
           {status === "sending" ? (
             <>

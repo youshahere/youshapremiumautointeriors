@@ -48,32 +48,32 @@ export default function ContactPage() {
             <SectionHeading eyebrow="Request a quote" title="Tell us about your vehicle." description="The more we know about the car and the job, the closer our first answer will be." />
             <address className="mt-10 space-y-5 not-italic">
               <p className="flex gap-4">
-                <Phone className="mt-1 size-5 shrink-0 text-saddle" aria-hidden="true" />
+                <Phone className="mt-1 size-5 shrink-0 text-muted" aria-hidden="true" />
                 <span>
                   <span className="block text-sm font-semibold uppercase tracking-[0.14em] text-muted">Phone / WhatsApp</span>
-                  <a href={site.phoneHref} className="text-lg font-medium hover:text-saddle">
+                  <a href={site.phoneHref} className="text-lg font-medium hover:text-muted">
                     {site.phone}
                   </a>
                 </span>
               </p>
               <p className="flex gap-4">
-                <Mail className="mt-1 size-5 shrink-0 text-saddle" aria-hidden="true" />
+                <Mail className="mt-1 size-5 shrink-0 text-muted" aria-hidden="true" />
                 <span>
                   <span className="block text-sm font-semibold uppercase tracking-[0.14em] text-muted">Email</span>
-                  <a href={`mailto:${site.email}`} className="text-lg font-medium hover:text-saddle">
+                  <a href={`mailto:${site.email}`} className="text-lg font-medium hover:text-muted">
                     {site.email}
                   </a>
                 </span>
               </p>
               <p className="flex gap-4">
-                <MapPin className="mt-1 size-5 shrink-0 text-saddle" aria-hidden="true" />
+                <MapPin className="mt-1 size-5 shrink-0 text-muted" aria-hidden="true" />
                 <span>
                   <span className="block text-sm font-semibold uppercase tracking-[0.14em] text-muted">Workshop</span>
                   <span className="text-lg font-medium">{site.addressOneLine}</span>
                 </span>
               </p>
               <p className="flex gap-4">
-                <Clock className="mt-1 size-5 shrink-0 text-saddle" aria-hidden="true" />
+                <Clock className="mt-1 size-5 shrink-0 text-muted" aria-hidden="true" />
                 <span>
                   <span className="block text-sm font-semibold uppercase tracking-[0.14em] text-muted">Visiting</span>
                   <span className="text-lg font-medium">Please call or WhatsApp before you visit so we can be ready for you.</span>
@@ -88,7 +88,7 @@ export default function ContactPage() {
       <section id="visit" className="scroll-mt-24 bg-paper">
         <Container className="py-20 sm:py-24">
           <SectionHeading eyebrow="Visit our workshop" title="Find us in Upper Worli." />
-          <div className="panel-stitch mt-10 overflow-hidden rounded-sm bg-hide p-3">
+          <div className="panel-stitch mt-10 overflow-hidden rounded-sm bg-ink p-3">
             <iframe
               title={`Map showing ${site.name} at ${site.addressOneLine}`}
               src={mapSrc}

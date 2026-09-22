@@ -24,25 +24,25 @@ export function BeforeAfterSlider({
   const id = useId();
   return (
     <figure>
-      <div className="ba-frame relative aspect-[4/3] w-full select-none overflow-hidden rounded-sm bg-hide">
+      <div className="ba-frame relative aspect-[4/3] w-full select-none overflow-hidden rounded-sm bg-ink">
         <div className="absolute inset-0">
           <SeatPanel pattern={pattern} tone={tone} />
         </div>
         <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
           <SeatPanel pattern={pattern} tone={tone} worn />
         </div>
-        <span className="absolute left-3 top-3 rounded-sm bg-hide/80 px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-paper">
+        <span className="absolute left-3 top-3 rounded-sm bg-ink/80 px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-paper">
           Before
         </span>
-        <span className="absolute right-3 top-3 rounded-sm bg-thread px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-hide">
+        <span className="absolute right-3 top-3 rounded-sm bg-copper px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-ink">
           After
         </span>
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 w-0.5 bg-thread-soft shadow-[0_0_0_1px_rgb(0_0_0/0.4)]"
+          className="pointer-events-none absolute inset-y-0 w-0.5 bg-copper-light shadow-[0_0_0_1px_rgb(0_0_0/0.4)]"
           style={{ left: `${pos}%` }}
         >
-          <span className="absolute left-1/2 top-1/2 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-thread text-hide shadow-lg">
+          <span className="absolute left-1/2 top-1/2 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-copper text-ink shadow-lg">
             <ChevronsLeftRight className="size-5" />
           </span>
         </div>

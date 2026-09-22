@@ -41,7 +41,7 @@ export default function AboutPage() {
               sizes="(min-width:768px) 48rem, 100vw"
             />
           </Reveal>
-          <p className="mx-auto mt-16 max-w-3xl text-center font-display text-3xl italic text-saddle-deep">
+          <p className="mx-auto mt-16 max-w-3xl text-center font-display text-3xl italic text-copper-deep">
             {heritage.closing}
           </p>
         </Container>
@@ -49,8 +49,8 @@ export default function AboutPage() {
 
       <section className="bg-paper">
         <Container className="py-16">
-          <div className="panel-stitch mx-auto max-w-4xl rounded-sm bg-hide p-10 text-center text-paper sm:p-14 [--stitch-color:rgb(201_162_91/0.4)]">
-            <p className="text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-thread">Brand purpose</p>
+          <div className="panel-stitch mx-auto max-w-4xl rounded-sm bg-ink p-10 text-center text-paper sm:p-14 [--stitch-color:rgb(201_162_91/0.4)]">
+            <p className="text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-copper">Brand purpose</p>
             <p className="mt-5 font-display text-2xl leading-snug sm:text-3xl">{heritage.purpose}</p>
           </div>
         </Container>
@@ -63,18 +63,18 @@ export default function AboutPage() {
             <ul className="mt-10 space-y-5">
               {vision.pillars.map((p) => (
                 <li key={p} className="flex gap-4">
-                  <span aria-hidden="true" className="mt-2.5 size-2.5 shrink-0 rotate-45 bg-thread-deep" />
+                  <span aria-hidden="true" className="mt-2.5 size-2.5 shrink-0 rotate-45 bg-copper-deep" />
                   <span className="text-[1.05rem]">{p}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-10 border-l-2 border-thread pl-5 font-display text-2xl italic text-saddle-deep">{vision.closing}</p>
+            <p className="mt-10 border-l-2 border-copper pl-5 font-display text-2xl italic text-copper-deep">{vision.closing}</p>
           </div>
 
           <Reveal>
             <figure className="panel-stitch quilt rounded-sm p-10 text-paper sm:p-12 [--stitch-color:rgb(201_162_91/0.4)]">
-              <Quote className="size-10 text-thread" aria-hidden="true" />
-              <p className="mt-4 text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-thread">{familyMessage.heading}</p>
+              <Quote className="size-10 text-copper" aria-hidden="true" />
+              <p className="mt-4 text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-copper">{familyMessage.heading}</p>
               <blockquote className="mt-5 font-display text-2xl italic leading-snug sm:text-[1.75rem]">
                 {familyMessage.quote}
               </blockquote>

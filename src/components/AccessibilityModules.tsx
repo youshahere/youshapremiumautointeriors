@@ -23,8 +23,8 @@ export function AccessibilityModules() {
               return (
                 <li key={m.title} className={i < 3 ? "lg:col-span-2" : "lg:col-span-3"}>
                   <Reveal delay={(i % 3) * 0.07} className="h-full">
-                    <div className="panel-stitch h-full rounded-sm bg-racing p-8 text-paper [--stitch-color:rgb(226_199_143/0.4)]">
-                      <span className="flex size-14 items-center justify-center rounded-full border border-thread-soft/60 text-thread-soft">
+                    <div className="panel-stitch h-full rounded-sm bg-ink p-8 text-paper [--stitch-color:rgb(226_199_143/0.4)]">
+                      <span className="flex size-14 items-center justify-center rounded-full border border-copper-light/60 text-copper-light">
                         <Icon className="size-7 stroke-[1.4]" aria-hidden="true" />
                       </span>
                       <h3 className="mt-6 text-[1.55rem]">{m.title}</h3>
@@ -45,7 +45,7 @@ export function AccessibilityModules() {
               <p className="font-display text-[clamp(1.6rem,3.6vw,2.75rem)] italic leading-tight text-paper">
                 “{accessibility.philosophy}”
               </p>
-              <footer className="mt-8 text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-thread-soft">
+              <footer className="mt-8 text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-copper-light">
                 Our accessibility philosophy
               </footer>
             </blockquote>
@@ -61,9 +61,9 @@ export function AccessibilityDisclaimer() {
   return (
     <aside
       aria-labelledby="a11y-disclaimer"
-      className="flex gap-5 rounded-sm border-2 border-thread-deep bg-paper p-6 sm:p-8"
+      className="flex gap-5 rounded-sm border-2 border-copper-deep bg-paper p-6 sm:p-8"
     >
-      <ShieldAlert className="mt-1 size-8 shrink-0 text-thread-deep" aria-hidden="true" />
+      <ShieldAlert className="mt-1 size-8 shrink-0 text-copper-deep" aria-hidden="true" />
       <div>
         <h2 id="a11y-disclaimer" className="text-2xl">
           {accessibility.disclaimerTitle}

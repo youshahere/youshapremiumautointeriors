@@ -44,15 +44,15 @@ export default function CommercialPage() {
           </div>
           <div>
             <h2 className="text-[clamp(1.8rem,3.4vw,2.6rem)]">{commercial.servicesHeading}</h2>
-            <ul className="mt-8 divide-y divide-hide/12 border-y border-hide/12">
+            <ul className="mt-8 divide-y divide-ink/12 border-y border-ink/12">
               {commercial.services.map((s) => (
                 <li key={s} className="flex items-center gap-4 py-4 text-[1.1rem] font-medium">
-                  <Check className="size-5 text-thread-deep" strokeWidth={3} aria-hidden="true" />
+                  <Check className="size-5 text-copper-deep" strokeWidth={3} aria-hidden="true" />
                   {s}
                 </li>
               ))}
             </ul>
-            <p className="mt-8 border-l-2 border-thread pl-5 font-display text-2xl italic text-saddle-deep">{commercial.ctaText}</p>
+            <p className="mt-8 border-l-2 border-copper pl-5 font-display text-2xl italic text-copper-deep">{commercial.ctaText}</p>
           </div>
         </Container>
       </section>

@@ -46,7 +46,7 @@ export default function ServicesPage() {
               <Button href={whatsappLink("Hi Yousha, I have a custom upholstery project.")} variant="whatsapp" event="whatsapp_click" eventLabel="services-custom">
                 Describe it on WhatsApp
               </Button>
-              <Link href="/contact" className="inline-flex min-h-12 items-center px-2 font-semibold text-saddle underline underline-offset-4">
+              <Link href="/contact" className="inline-flex min-h-12 items-center px-2 font-semibold text-muted underline underline-offset-4">
                 Or send us the details
               </Link>
             </div>

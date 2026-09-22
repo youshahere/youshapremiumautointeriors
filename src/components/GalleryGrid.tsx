@@ -23,14 +23,14 @@ function Tile({ item, onOpen }: { item: GalleryItem; onOpen: () => void }) {
     <button
       type="button"
       onClick={onOpen}
-      className="group relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-hide text-left"
+      className="group relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-ink text-left"
       aria-label={`Open ${item.title}, ${item.category}`}
     >
       <span className="relative block size-full transition-transform duration-500 ease-out-quart group-hover:scale-105">
         <Visual item={item} sizes="(min-width:1280px) 30vw, (min-width:640px) 45vw, 100vw" />
       </span>
       <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12">
-        <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-thread-soft">{item.category}</span>
+        <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-copper-light">{item.category}</span>
         <span className="mt-1 block font-display text-lg leading-tight text-paper">{item.title}</span>
       </span>
     </button>
@@ -71,7 +71,7 @@ function Lightbox({
       onClose={onClose}
       onClick={(e) => e.target === ref.current && onClose()}
       aria-label={`${item.title} — ${item.category}`}
-      className="m-auto w-[min(92vw,64rem)] max-w-none rounded-sm bg-hide p-0 text-paper backdrop:bg-black/85"
+      className="m-auto w-[min(92vw,64rem)] max-w-none rounded-sm bg-ink p-0 text-paper backdrop:bg-black/85"
     >
       <div className="relative">
         <div className="relative aspect-[4/3] max-h-[75vh] w-full sm:aspect-[16/10]">
@@ -85,7 +85,7 @@ function Lightbox({
         </div>
         <div className="flex items-center justify-between gap-4 p-5">
           <div>
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-thread">{item.category}</p>
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-copper">{item.category}</p>
             <p className="font-display text-xl">{item.title}</p>
             <p className="mt-1 text-sm text-[#a99d8c]">Sample image, not a Yousha project photo.</p>
           </div>
@@ -97,7 +97,7 @@ function Lightbox({
           type="button"
           onClick={onClose}
           aria-label="Close viewer"
-          className="absolute right-3 top-3 flex size-11 items-center justify-center rounded-full bg-hide/85 text-paper hover:bg-thread hover:text-hide"
+          className="absolute right-3 top-3 flex size-11 items-center justify-center rounded-full bg-ink/85 text-paper hover:bg-copper hover:text-ink"
         >
           <X className="size-5" aria-hidden="true" />
         </button>
@@ -105,7 +105,7 @@ function Lightbox({
           type="button"
           onClick={() => onIndex((index - 1 + items.length) % items.length)}
           aria-label="Previous image"
-          className="absolute left-3 top-[38%] flex size-11 items-center justify-center rounded-full bg-hide/85 text-paper hover:bg-thread hover:text-hide"
+          className="absolute left-3 top-[38%] flex size-11 items-center justify-center rounded-full bg-ink/85 text-paper hover:bg-copper hover:text-ink"
         >
           <ChevronLeft className="size-6" aria-hidden="true" />
         </button>
@@ -113,7 +113,7 @@ function Lightbox({
           type="button"
           onClick={() => onIndex((index + 1) % items.length)}
           aria-label="Next image"
-          className="absolute right-3 top-[38%] flex size-11 items-center justify-center rounded-full bg-hide/85 text-paper hover:bg-thread hover:text-hide"
+          className="absolute right-3 top-[38%] flex size-11 items-center justify-center rounded-full bg-ink/85 text-paper hover:bg-copper hover:text-ink"
         >
           <ChevronRight className="size-6" aria-hidden="true" />
         </button>
@@ -144,8 +144,8 @@ export function GalleryGrid() {
             className={cn(
               "rounded-full border px-4 py-2 text-[0.9rem] font-medium transition-colors",
               category === c
-                ? "border-hide bg-hide text-paper"
-                : "border-hide/25 bg-paper text-hide hover:border-hide",
+                ? "border-ink bg-ink text-paper"
+                : "border-ink/25 bg-paper text-ink hover:border-ink",
             )}
           >
             {c}
@@ -159,7 +159,7 @@ export function GalleryGrid() {
       </p>
 
       {items.length === 0 ? (
-        <p className="mt-10 rounded-sm border border-dashed border-hide/30 p-10 text-center text-muted">
+        <p className="mt-10 rounded-sm border border-dashed border-ink/30 p-10 text-center text-muted">
           No projects in this category yet. Message us on WhatsApp and we will share recent work.
         </p>
       ) : beforeAfter ? (
@@ -197,10 +197,10 @@ export function GalleryPreview() {
         <ul className="-ml-5 flex">
           {preview.map((item) => (
             <li key={item.id} className="min-w-0 shrink-0 basis-[82%] pl-5 sm:basis-[46%] lg:basis-[32%]">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-hide">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-ink">
                 <Visual item={item} sizes="(min-width:1024px) 32vw, (min-width:640px) 46vw, 82vw" label />
                 <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12">
-                  <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-thread-soft">{item.category}</span>
+                  <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-copper-light">{item.category}</span>
                   <span className="mt-1 block font-display text-lg leading-tight text-paper">{item.title}</span>
                 </span>
               </div>
@@ -213,7 +213,7 @@ export function GalleryPreview() {
           type="button"
           onClick={() => api?.scrollPrev()}
           aria-label="Previous"
-          className="flex size-12 items-center justify-center rounded-full border border-thread text-thread hover:bg-thread hover:text-hide"
+          className="flex size-12 items-center justify-center rounded-full border border-copper text-copper hover:bg-copper hover:text-ink"
         >
           <ChevronLeft className="size-5" aria-hidden="true" />
         </button>
@@ -221,7 +221,7 @@ export function GalleryPreview() {
           type="button"
           onClick={() => api?.scrollNext()}
           aria-label="Next"
-          className="flex size-12 items-center justify-center rounded-full border border-thread text-thread hover:bg-thread hover:text-hide"
+          className="flex size-12 items-center justify-center rounded-full border border-copper text-copper hover:bg-copper hover:text-ink"
         >
           <ChevronRight className="size-5" aria-hidden="true" />
         </button>

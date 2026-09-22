@@ -26,7 +26,7 @@ export function CTASection({
             <StitchDraw className="mx-auto mb-10 w-24" />
             <h2 className="text-[clamp(2rem,4.6vw,3.5rem)] text-paper">{title}</h2>
             <p className="mt-6 text-lg text-[#d8ccb9]">{body}</p>
-            {emphasis && <p className="mt-4 font-display text-2xl italic text-thread-soft">{emphasis}</p>}
+            {emphasis && <p className="mt-4 font-display text-2xl italic text-copper-light">{emphasis}</p>}
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Button href={site.phoneHref} variant="primary" size="lg" event="call_click" eventLabel="cta-band">
                 <Phone className="size-5" aria-hidden="true" />

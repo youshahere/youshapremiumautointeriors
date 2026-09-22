@@ -30,7 +30,7 @@ export function Reveal({
 }
 
 /** The running stitch, drawn left to right as it scrolls into view. */
-export function StitchDraw({ className = "", tone = "text-thread" }: { className?: string; tone?: string }) {
+export function StitchDraw({ className = "", tone = "text-copper" }: { className?: string; tone?: string }) {
   const reduce = useReducedMotion();
   return (
     <motion.div

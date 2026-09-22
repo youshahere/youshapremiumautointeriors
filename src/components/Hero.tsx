@@ -36,7 +36,7 @@ export function Hero({ eyebrow, title, sub, actions, trust, size = "page", tone 
           className="absolute inset-y-0 right-0 w-full opacity-55 [mask-image:linear-gradient(to_right,transparent,black_55%)] lg:w-[68%] lg:opacity-100"
         >
           <Image src={photo.src} alt="" fill priority sizes="(min-width:1024px) 68vw, 100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-hide/35" />
+          <div className="absolute inset-0 bg-ink/35" />
         </div>
       )}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
@@ -45,7 +45,7 @@ export function Hero({ eyebrow, title, sub, actions, trust, size = "page", tone 
           <div className={cn(home ? "max-w-4xl" : "max-w-3xl")}>
             {eyebrow && (
               <Reveal>
-                <p className="mb-6 flex items-center gap-4 text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-thread">
+                <p className="mb-6 flex items-center gap-4 text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-copper">
                   <span aria-hidden="true" className="stitch w-12" />
                   {eyebrow}
                 </p>
@@ -73,7 +73,7 @@ export function Hero({ eyebrow, title, sub, actions, trust, size = "page", tone 
             )}
             {trust && (
               <Reveal delay={0.35}>
-                <p className="mt-10 flex items-center gap-4 text-[0.82rem] font-semibold uppercase tracking-[0.2em] text-thread-soft">
+                <p className="mt-10 flex items-center gap-4 text-[0.82rem] font-semibold uppercase tracking-[0.2em] text-copper-light">
                   <span aria-hidden="true" className="stitch w-16" />
                   {trust}
                 </p>

@@ -1,28 +1,22 @@
 @import "tailwindcss";
 
 /*
-  Design tokens. Palette is taken from the workshop itself:
-  hide (dark saddle leather), thread (gold contrast stitching), stone (workbench
-  linen), saddle (tan leather), racing (British-racing-green hide, used only for
-  the accessibility line so it reads as its own world).
+  Design tokens. Palette is drawn straight from the Yousha logo: ink (near-black
+  wordmark), copper (the seat-mark accent, three weights), paper/stone (clean
+  premium whites), muted (secondary ink). No leather/quilt textures — this is
+  an editorial, high-whitespace identity with copper as the single accent.
 */
 @theme {
-  --color-hide: #1a1411;
-  --color-hide-2: #261d18;
-  --color-hide-3: #362a22;
-  --color-saddle: #7a4522;
-  --color-saddle-deep: #5c3319;
-  --color-thread: #c9a25b;
-  --color-thread-soft: #e2c78f;
-  --color-thread-deep: #7d5a1c;
-  --color-stone: #ebe6de;
-  --color-stone-2: #dfd8cc;
-  --color-paper: #f7f4ee;
-  --color-ink: #1f1814;
-  --color-muted: #5b4f45;
-  --color-racing: #1e3b32;
-  --color-racing-2: #2a4f43;
-  --color-oxblood: #5a2323;
+  --color-ink: #17130f;
+  --color-ink-2: #231d18;
+  --color-ink-3: #362a22;
+  --color-copper: #b15a2b;
+  --color-copper-deep: #8f4620;
+  --color-copper-light: #d98a57;
+  --color-stone: #f1ede6;
+  --color-stone-2: #e7e0d4;
+  --color-paper: #fdfcfa;
+  --color-muted: #4a433c;
 
   --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
@@ -59,36 +53,36 @@
     text-wrap: pretty;
   }
   :focus-visible {
-    outline: 3px solid var(--color-thread);
+    outline: 3px solid var(--color-copper);
     outline-offset: 3px;
     border-radius: 2px;
   }
   ::selection {
-    background: var(--color-thread);
-    color: var(--color-hide);
+    background: var(--color-copper);
+    color: var(--color-paper);
   }
 }
 
 @layer utilities {
-  /* --- Stitch language: the one signature that runs through the whole site --- */
+  /* --- Stitch language: fine hairline dividers, now in copper --- */
 
   /* A horizontal running stitch. Set colour with text-*, draw-in with .stitch-draw */
   .stitch {
     height: 2px;
-    color: var(--color-thread);
+    color: var(--color-copper);
     background-image: linear-gradient(to right, currentColor 0 9px, transparent 9px 16px);
     background-size: 16px 2px;
     background-repeat: repeat-x;
   }
   .stitch-v {
     width: 2px;
-    color: var(--color-thread);
+    color: var(--color-copper);
     background-image: linear-gradient(to bottom, currentColor 0 9px, transparent 9px 16px);
     background-size: 2px 16px;
     background-repeat: repeat-y;
   }
 
-  /* A leather panel with a stitched inset border. */
+  /* A panel with a fine dashed inset border. */
   .panel-stitch {
     position: relative;
   }
@@ -96,34 +90,9 @@
     content: "";
     position: absolute;
     inset: 8px;
-    border: 1.5px dashed var(--stitch-color, color-mix(in srgb, var(--color-thread) 55%, transparent));
+    border: 1.5px dashed var(--stitch-color, color-mix(in srgb, var(--color-copper) 45%, transparent));
     border-radius: inherit;
     pointer-events: none;
-  }
-
-  /* Diamond-quilted dark leather with button points. */
-  .quilt {
-    background-color: var(--color-hide);
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cpath d='M0 44 L44 0 L88 44 L44 88 Z' fill='none' stroke='%23c9a25b' stroke-opacity='.32' stroke-width='1.4' stroke-dasharray='6 5'/%3E%3Ccircle cx='0' cy='44' r='2.6' fill='%23c9a25b' fill-opacity='.4'/%3E%3Ccircle cx='88' cy='44' r='2.6' fill='%23c9a25b' fill-opacity='.4'/%3E%3Ccircle cx='44' cy='0' r='2.6' fill='%23c9a25b' fill-opacity='.4'/%3E%3Ccircle cx='44' cy='88' r='2.6' fill='%23c9a25b' fill-opacity='.4'/%3E%3C/svg%3E"),
-      radial-gradient(closest-side, rgb(255 255 255 / 0.055), rgb(255 255 255 / 0) 78%);
-    background-size:
-      88px 88px,
-      88px 88px;
-  }
-  .quilt-green {
-    background-color: var(--color-racing);
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'%3E%3Cpath d='M0 44 L44 0 L88 44 L44 88 Z' fill='none' stroke='%23e2c78f' stroke-opacity='.28' stroke-width='1.4' stroke-dasharray='6 5'/%3E%3Ccircle cx='0' cy='44' r='2.6' fill='%23e2c78f' fill-opacity='.35'/%3E%3Ccircle cx='88' cy='44' r='2.6' fill='%23e2c78f' fill-opacity='.35'/%3E%3Ccircle cx='44' cy='0' r='2.6' fill='%23e2c78f' fill-opacity='.35'/%3E%3Ccircle cx='44' cy='88' r='2.6' fill='%23e2c78f' fill-opacity='.35'/%3E%3C/svg%3E"),
-      radial-gradient(closest-side, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0) 78%);
-    background-size:
-      88px 88px,
-      88px 88px;
-  }
-
-  /* Fine leather grain overlay for stone sections. */
-  .grain {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .2 0 0 0 0 .1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   .text-balance {
@@ -137,8 +106,8 @@
   left: 1rem;
   top: -4rem;
   z-index: 100;
-  background: var(--color-thread);
-  color: var(--color-hide);
+  background: var(--color-copper);
+  color: var(--color-paper);
   padding: 0.75rem 1rem;
   font-weight: 600;
 }
@@ -179,7 +148,7 @@
   outline: none;
 }
 .ba-frame:has(.ba-range:focus-visible) {
-  outline: 3px solid var(--color-thread);
+  outline: 3px solid var(--color-copper);
   outline-offset: 3px;
 }
 

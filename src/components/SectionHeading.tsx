@@ -26,7 +26,7 @@ export function SectionHeading({
           className={cn(
             "mb-5 flex items-center gap-4 text-[0.78rem] font-semibold uppercase tracking-[0.2em]",
             align === "center" && "justify-center",
-            dark ? "text-thread" : "text-thread-deep",
+            dark ? "text-copper" : "text-copper-deep",
           )}
         >
           <span aria-hidden="true" className="stitch w-10" />
@@ -36,7 +36,7 @@ export function SectionHeading({
       <Tag
         className={cn(
           "text-[clamp(2rem,4.6vw,3.6rem)]",
-          dark ? "text-paper" : "text-hide",
+          dark ? "text-paper" : "text-ink",
         )}
       >
         {title}

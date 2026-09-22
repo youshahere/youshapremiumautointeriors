@@ -36,7 +36,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         }
       >
         {service.badge && (
-          <p className="mt-8 inline-block rounded-full border border-thread/60 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-thread-soft">
+          <p className="mt-8 inline-block rounded-full border border-copper/60 px-4 py-1.5 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-copper-light">
             {service.badge}
           </p>
         )}
@@ -53,15 +53,15 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                 </p>
               ))}
               {service.closing && (
-                <p className="mt-8 border-l-2 border-thread pl-5 font-display text-2xl italic text-saddle-deep">{service.closing}</p>
+                <p className="mt-8 border-l-2 border-copper pl-5 font-display text-2xl italic text-copper-deep">{service.closing}</p>
               )}
             </div>
             <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2">
               {service.items.map((item, i) => (
                 <li key={item}>
                   <Reveal delay={(i % 2) * 0.05} y={10}>
-                    <div className="flex items-start gap-3 border-b border-hide/12 py-4">
-                      <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-hide text-thread">
+                    <div className="flex items-start gap-3 border-b border-ink/12 py-4">
+                      <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-ink text-copper">
                         <Check className="size-3.5" strokeWidth={3} aria-hidden="true" />
                       </span>
                       <span className="text-[1.02rem] font-medium">{item}</span>
@@ -73,7 +73,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
           </div>
 
           {service.disclaimer && (
-            <p className="mt-14 max-w-4xl rounded-sm border border-hide/20 bg-paper p-5 text-sm text-muted">
+            <p className="mt-14 max-w-4xl rounded-sm border border-ink/20 bg-paper p-5 text-sm text-muted">
               <strong className="font-semibold text-ink">Please note: </strong>
               {service.disclaimer}
             </p>
@@ -81,11 +81,11 @@ export function ServicePageTemplate({ service }: { service: Service }) {
 
           <p className="mt-12 text-[0.97rem] text-muted">
             See our work in the{" "}
-            <Link href="/gallery" className="font-semibold text-saddle underline underline-offset-4">
+            <Link href="/gallery" className="font-semibold text-muted underline underline-offset-4">
               gallery
             </Link>{" "}
             or browse{" "}
-            <Link href="/services" className="font-semibold text-saddle underline underline-offset-4">
+            <Link href="/services" className="font-semibold text-muted underline underline-offset-4">
               all services
             </Link>
             .
