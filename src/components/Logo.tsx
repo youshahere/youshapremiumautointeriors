@@ -3,9 +3,8 @@ import { Armchair } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Icon-only mark: a copper ring (the logo's swirl, simplified) around a seat
- * glyph. Used for the favicon, compact nav states, and the Watermark
- * component — anywhere the full wordmark doesn't fit.
+ * Icon-only mark: a copper ring around a seat glyph, used only where the
+ * full lockup won't fit (e.g. a future compact nav state).
  */
 export function LogoMark({ className }: { className?: string }) {
   return (
@@ -22,38 +21,24 @@ export function LogoMark({ className }: { className?: string }) {
 }
 
 /**
- * Full lockup. On light backgrounds this renders the client-supplied raster
- * logo directly. On dark backgrounds (where the raster's white background
- * would show as a box) it renders a redrawn SVG-safe recreation in the same
- * ink/copper palette — a close match, not a vector trace of the source file.
- * Swap in a transparent PNG/vector of the real logo here once supplied and
- * both branches can use the same asset.
+ * Full lockup, always the real client-supplied logo — never a redrawn
+ * approximation. `yousha-logo.png` (background removed) renders on light
+ * surfaces; `yousha-logo-dark.png` (same art, ink lines swapped for paper so
+ * they don't disappear against a dark ground) renders on dark surfaces.
+ * Both are generated once from the source JPG — see
+ * docs/superpowers/specs/2026-09-22-premium-rebrand-design.md.
  */
 export function Logo({ className, dark = true }: { className?: string; dark?: boolean }) {
-  if (!dark) {
-    return (
-      <span className={cn("inline-flex items-center", className)}>
-        <Image
-          src="/images/brand/yousha-logo.jpg"
-          alt="Yousha Premium Auto Interiors — Custom Upholstery and Accessible Seating"
-          width={480}
-          height={175}
-          className="h-auto w-full max-w-[220px]"
-          priority
-        />
-      </span>
-    );
-  }
-
   return (
-    <span className={cn("inline-flex items-center gap-3", className)}>
-      <LogoMark />
-      <span className="flex flex-col leading-none">
-        <span className="font-display text-[1.65rem] font-semibold tracking-[0.14em] text-paper">YOUSHA</span>
-        <span className="mt-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.3em] text-copper-light">
-          Premium Auto Interiors
-        </span>
-      </span>
+    <span className={cn("inline-flex items-center", className)}>
+      <Image
+        src={dark ? "/images/brand/yousha-logo-dark.png" : "/images/brand/yousha-logo.png"}
+        alt="Yousha Premium Auto Interiors — Custom Upholstery and Accessible Seating"
+        width={480}
+        height={175}
+        className="h-auto w-full max-w-[220px]"
+        priority
+      />
     </span>
   );
 }
