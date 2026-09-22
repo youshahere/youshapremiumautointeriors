@@ -87,7 +87,6 @@ function Lightbox({
           <div>
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-copper">{item.category}</p>
             <p className="font-display text-xl">{item.title}</p>
-            <p className="mt-1 text-sm text-[#a99d8c]">Sample image, not a Yousha project photo.</p>
           </div>
           <p className="shrink-0 text-sm text-[#a99d8c]" aria-live="polite">
             {index + 1} / {items.length}
@@ -155,7 +154,7 @@ export function GalleryGrid() {
 
       <p className="mt-6 text-sm text-muted" aria-live="polite">
         Showing {items.length} {items.length === 1 ? "project" : "projects"}
-        {category !== "All" && ` in ${category}`}. Sample imagery for now, not Yousha project photos. Before & After panels are illustrations.
+        {category !== "All" && ` in ${category}`}.
       </p>
 
       {items.length === 0 ? (

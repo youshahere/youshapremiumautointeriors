@@ -88,13 +88,6 @@ export function Footer() {
           <p>
             © {year} {site.name}. All rights reserved.
           </p>
-          <p className="max-w-xl md:text-right">
-            <Link href="/credits" className="underline underline-offset-4 hover:text-copper-light">
-              Image credits
-            </Link>
-            {" · "}
-            Vehicle brand names are mentioned only to describe experience. Yousha is an independent workshop, not affiliated with any vehicle manufacturer.
-          </p>
         </Container>
       </div>
     </footer>

@@ -114,7 +114,6 @@ export default function HomePage() {
           <div className="mt-12">
             <GalleryPreview />
           </div>
-          <p className="mt-6 text-sm text-muted">Sample imagery until project photography is added.</p>
         </Container>
       </section>
 

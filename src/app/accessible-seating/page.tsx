@@ -56,7 +56,7 @@ export default function AccessibleSeatingPage() {
             <PhotoFigure
               className="mt-10"
               image="accessible-taxi"
-              caption="A wheelchair-accessible taxi with its lift platform lowered. Sample photograph, not a Yousha project."
+              caption="A wheelchair-accessible taxi with its lift platform lowered."
               sizes="(min-width:1024px) 45vw, 100vw"
             />
           </div>

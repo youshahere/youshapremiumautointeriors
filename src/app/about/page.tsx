@@ -38,7 +38,7 @@ export default function AboutPage() {
           <Reveal className="mx-auto mt-16 max-w-3xl">
             <PhotoFigure
               image="upholsterer-1953"
-              caption="An upholsterer at a sewing machine, 1953 (Archives New Zealand). A period photograph of the trade, not of Yousha's own workshop."
+              caption="An upholsterer at a sewing machine, 1953 (Archives New Zealand)."
               sizes="(min-width:768px) 48rem, 100vw"
             />
           </Reveal>
