@@ -24,9 +24,10 @@ export function LocalBusinessJsonLd() {
         telephone: site.phone,
         email: site.email,
         foundingDate: "1950",
+        taxID: site.gstin,
         address: {
           "@type": "PostalAddress",
-          streetAddress: `${site.address.line1}, ${site.address.line2}`,
+          streetAddress: `${site.address.line1}, ${site.address.line2}, ${site.address.line3}`,
           addressLocality: site.address.city,
           addressRegion: site.address.region,
           postalCode: site.address.postalCode,

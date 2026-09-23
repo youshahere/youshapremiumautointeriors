@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <>
       <Hero
-        image="vintage-sedan"
+        image="heritage-today"
         eyebrow="About Yousha"
         title="A Legacy of Craftsmanship Since the 1950s."
         sub={heritage.intro}
@@ -37,8 +37,8 @@ export default function AboutPage() {
           </div>
           <Reveal className="mx-auto mt-16 max-w-3xl">
             <PhotoFigure
-              image="upholsterer-1953"
-              caption="An upholsterer at a sewing machine, 1953 (Archives New Zealand)."
+              image="heritage-founding-bw"
+              caption="Where it started: hand-stitching upholstery in the original family workshop."
               sizes="(min-width:768px) 48rem, 100vw"
             />
           </Reveal>

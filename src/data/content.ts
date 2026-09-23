@@ -42,18 +42,21 @@ export const heritage = {
   stops: [
     {
       when: "1950s",
-      title: "Foundation",
-      body: "Mr. Noor Bhai “Seatwale” (b. 1941) began as a self-taught upholstery craftsman. His skill was later recognised when he was honoured as a National Upholstery Tailor.",
+      title: "National Uphostry Tailors",
+      body: "Mr. Noor Bhai “Seatwale” (b. 1941) began as a self-taught upholstery craftsman, trading as National Uphostry Tailors. His skill was later recognised when he was honoured as a National Upholstery Tailor.",
+      image: "heritage-national-uphostry" as const,
     },
     {
       when: "1980s",
-      title: "The Craft Continues",
-      body: "His son, Mr. Sajid Akhter, carried the trade forward through decades of automotive seating, interior repair and upholstery work, and kept the standard exactly where it was.",
+      title: "Yousha Upholstery",
+      body: "His son, Mr. Sajid Akhter, carried the trade forward as Yousha Upholstery through decades of automotive seating, interior repair and upholstery work, and kept the standard exactly where it was.",
+      image: "heritage-generation-vintage" as const,
     },
     {
       when: "Today",
-      title: "The Yousha Era",
+      title: "Yousha Premium Auto Interiors",
       body: "The business is reimagined as Yousha Premium Auto Interiors, named after the next generation. Mentored by Saqib Anjum, an engineer and cybersecurity consultant by profession, it adds modern process, digital presentation, accessibility focus and customer experience. Mr. Sajid Akhter continues to lead on craftsmanship.",
+      image: "heritage-today" as const,
     },
   ],
   closing: "Heritage remains our foundation. Innovation defines our future.",

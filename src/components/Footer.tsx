@@ -19,6 +19,7 @@ export function Footer() {
             Three generations of craftsmanship, reimagined for modern mobility.
           </p>
           <p className="mt-5 text-sm text-copper">{site.footerHeritage}</p>
+          <p className="mt-2 text-xs text-[#a99d8c]">GSTIN: {site.gstin}</p>
         </div>
 
         <div>

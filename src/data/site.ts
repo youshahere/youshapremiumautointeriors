@@ -8,18 +8,22 @@ export const site = {
   whatsappNumber: "919819478648",
   email: "info@yousha.in",
   address: {
-    line1: "Dainik Shivner Marg, Gandhi Nagar",
-    line2: "Upper Worli, Worli",
+    line1: "Ground Floor, G/9, Plot CS-109/2, Parel Sahyadri CHS",
+    line2: "Dainik Shivneri Marg, near Phoenix Palladium",
+    line3: "Worli Naka, Acharya Atre Chowk",
     city: "Mumbai",
     region: "Maharashtra",
     postalCode: "400018",
     country: "IN",
   },
   addressOneLine:
-    "Dainik Shivner Marg, Gandhi Nagar, Upper Worli, Worli, Mumbai, Maharashtra – 400018",
-  mapQuery: "Dainik Shivner Marg, Gandhi Nagar, Upper Worli, Worli, Mumbai 400018",
+    "Ground Floor, G/9, Plot CS-109/2, Parel Sahyadri CHS, Dainik Shivneri Marg, near Phoenix Palladium, Worli Naka, Mumbai, Maharashtra – 400018",
+  mapQuery:
+    "Parel Sahyadri CHS, Dainik Shivneri Marg, near Phoenix Palladium, Worli Naka, Mumbai 400018",
   footerLine: "Premium Auto Interiors • Custom Upholstery • Accessible Mobility • Restoration",
   footerHeritage: "Since the 1950s | Three Generations of Craftsmanship",
+  gstin: "27ACOPF9204D1ZQ",
+  legalConstitution: "Proprietorship",
 } as const;
 
 export function whatsappLink(message?: string) {

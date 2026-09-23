@@ -10,7 +10,11 @@ export type ImageKey =
   | "bmw-wheel"
   | "classic-convertible"
   | "upholsterer-1953"
-  | "accessible-taxi";
+  | "accessible-taxi"
+  | "heritage-founding-bw"
+  | "heritage-national-uphostry"
+  | "heritage-generation-vintage"
+  | "heritage-today";
 
 export type Photo = {
   src: string;
@@ -109,5 +113,33 @@ export const photos: Record<ImageKey, Photo> = {
     width: 1800,
     height: 1350,
     credit: { title: "Wheelchair Accessible Taxi lift platform New Farm Park New Farm P1150239", author: "John Robert McPherson", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Wheelchair_Accessible_Taxi_lift_platform_New_Farm_Park_New_Farm_P1150239.jpg" },
+  },
+  "heritage-founding-bw": {
+    src: "/images/heritage/founding-bw.jpg",
+    alt: "Black-and-white photograph of a craftsman hand-stitching upholstery at a Singer sewing machine in the original workshop",
+    width: 1448,
+    height: 1086,
+    credit: { title: "Yousha family workshop archive", author: "Yousha Premium Auto Interiors", license: "Owned by Yousha Premium Auto Interiors", url: "https://yousha.in" },
+  },
+  "heritage-national-uphostry": {
+    src: "/images/heritage/national-uphostry-1950s.jpg",
+    alt: "Founder standing beside a vintage Rolls-Royce outside the workshop, then trading as National Uphostry Tailors, est. 1950s",
+    width: 1122,
+    height: 1402,
+    credit: { title: "Yousha family workshop archive", author: "Yousha Premium Auto Interiors", license: "Owned by Yousha Premium Auto Interiors", url: "https://yousha.in" },
+  },
+  "heritage-generation-vintage": {
+    src: "/images/heritage/generation-vintage.jpg",
+    alt: "Second-generation craftsman beside a vintage Fiat outside the workshop, then trading as Yousha Upholstery",
+    width: 1193,
+    height: 1319,
+    credit: { title: "Yousha family workshop archive", author: "Yousha Premium Auto Interiors", license: "Owned by Yousha Premium Auto Interiors", url: "https://yousha.in" },
+  },
+  "heritage-today": {
+    src: "/images/heritage/today.jpg",
+    alt: "Yousha Premium Auto Interiors storefront today, with the current owner standing outside the workshop",
+    width: 1448,
+    height: 1086,
+    credit: { title: "Yousha family workshop archive", author: "Yousha Premium Auto Interiors", license: "Owned by Yousha Premium Auto Interiors", url: "https://yousha.in" },
   },
 };

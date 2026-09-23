@@ -16,7 +16,12 @@ export const metadata: Metadata = {
 export default function FaqPage() {
   return (
     <>
-      <Hero eyebrow="FAQ" title="Questions, answered plainly." sub="Can't find yours? Message us on WhatsApp and we will reply." />
+      <Hero
+        image="daytime-dash"
+        eyebrow="FAQ"
+        title="Questions, answered plainly."
+        sub="Can't find yours? Message us on WhatsApp and we will reply."
+      />
       <section className="bg-stone">
         <Container className="py-16 sm:py-24">
           <div className="max-w-4xl">

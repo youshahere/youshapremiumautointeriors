@@ -21,7 +21,7 @@ export default function HomePage() {
     <>
       <Hero
         size="home"
-        image="vintage-tan-sunlit"
+        image="heritage-today"
         title={hero.headline}
         sub={hero.sub}
         trust={hero.trust}

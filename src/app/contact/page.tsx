@@ -10,7 +10,7 @@ import { site, whatsappLink } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact & Visit Our Workshop | Worli, Mumbai",
   description:
-    "Call, WhatsApp or visit Yousha Premium Auto Interiors at Dainik Shivner Marg, Gandhi Nagar, Upper Worli, Mumbai 400018. Request a custom quote for your vehicle.",
+    "Call, WhatsApp or visit Yousha Premium Auto Interiors near Phoenix Palladium, Worli Naka, Mumbai 400018. Request a custom quote for your vehicle.",
   alternates: { canonical: "/contact" },
 };
 
@@ -80,6 +80,9 @@ export default function ContactPage() {
                 </span>
               </p>
             </address>
+            <p className="mt-8 text-sm text-muted">
+              GSTIN: {site.gstin} · {site.legalConstitution}
+            </p>
           </div>
           <EnquiryForm variant="quote" />
         </Container>
