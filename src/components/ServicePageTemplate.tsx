@@ -73,7 +73,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
           </div>
 
           {service.disclaimer && (
-            <p className="mt-14 max-w-4xl rounded-sm border border-ink/20 bg-paper p-5 text-sm text-muted">
+            <p className="mt-14 max-w-4xl rounded-2xl border border-ink/20 bg-paper p-5 text-sm text-muted">
               <strong className="font-semibold text-ink">Please note: </strong>
               {service.disclaimer}
             </p>

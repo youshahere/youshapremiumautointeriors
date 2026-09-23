@@ -24,7 +24,7 @@ export function AccessibilityModules() {
               return (
                 <li key={m.title} className={i < 3 ? "lg:col-span-2" : "lg:col-span-3"}>
                   <Reveal delay={(i % 3) * 0.07} className="h-full">
-                    <div className="panel-stitch h-full rounded-sm bg-ink p-8 text-paper [--stitch-color:rgb(217_138_87/0.4)]">
+                    <div className="panel-stitch h-full rounded-2xl bg-ink p-8 text-paper [--stitch-color:rgb(217_138_87/0.4)]">
                       <span className="flex size-14 items-center justify-center rounded-full border border-copper-light/60 text-copper-light">
                         <Icon className="size-7 stroke-[1.4]" aria-hidden="true" />
                       </span>
@@ -63,7 +63,7 @@ export function AccessibilityDisclaimer() {
   return (
     <aside
       aria-labelledby="a11y-disclaimer"
-      className="flex gap-5 rounded-sm border-2 border-copper-deep bg-paper p-6 sm:p-8"
+      className="flex gap-5 rounded-2xl border-2 border-copper-deep bg-paper p-6 sm:p-8"
     >
       <ShieldAlert className="mt-1 size-8 shrink-0 text-copper-deep" aria-hidden="true" />
       <div>

@@ -22,7 +22,7 @@ export function ServiceCard({
     <Link
       href={href}
       className={cn(
-        "panel-stitch group relative flex h-full flex-col rounded-sm p-8 transition-[transform,background-color,box-shadow] duration-300 ease-out-quart hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10",
+        "panel-stitch group relative flex h-full flex-col rounded-2xl p-8 transition-[transform,background-color,box-shadow] duration-300 ease-out-quart hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10",
         featured
           ? "bg-ink text-paper [--stitch-color:rgb(217_138_87/0.4)] hover:bg-ink-2"
           : "bg-paper text-ink [--stitch-color:rgb(143_70_32/0.32)]",

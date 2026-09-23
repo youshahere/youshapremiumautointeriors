@@ -111,7 +111,7 @@ const variants: Record<
 };
 
 const inputClass =
-  "w-full rounded-sm border border-ink/30 bg-white px-4 py-3 text-base text-ink placeholder:text-[#8a7d70] focus:border-muted focus:outline-none focus-visible:outline-3 focus-visible:outline-copper";
+  "w-full rounded-2xl border border-ink/30 bg-white px-4 py-3 text-base text-ink placeholder:text-[#8a7d70] focus:border-muted focus:outline-none focus-visible:outline-3 focus-visible:outline-copper";
 
 export function EnquiryForm({
   variant = "quote",
@@ -157,7 +157,7 @@ export function EnquiryForm({
 
   if (status === "sent") {
     return (
-      <div role="status" className={cn("panel-stitch rounded-sm bg-paper p-8 [--stitch-color:rgb(143_70_32/0.35)]", className)}>
+      <div role="status" className={cn("panel-stitch rounded-2xl bg-paper p-8 [--stitch-color:rgb(143_70_32/0.35)]", className)}>
         <CheckCircle2 className="size-10 text-[#1f7a4d]" aria-hidden="true" />
         <h3 className="mt-4 text-2xl">Thank you. We have your enquiry.</h3>
         <p className="mt-3 text-muted">
@@ -183,7 +183,7 @@ export function EnquiryForm({
     <form
       onSubmit={onSubmit}
       noValidate
-      className={cn("panel-stitch rounded-sm bg-paper p-6 sm:p-8 [--stitch-color:rgb(143_70_32/0.35)]", className)}
+      className={cn("panel-stitch rounded-2xl bg-paper p-6 sm:p-8 [--stitch-color:rgb(143_70_32/0.35)]", className)}
     >
       <input type="hidden" {...register("variant")} />
       {/* Honeypot */}
@@ -269,7 +269,7 @@ export function EnquiryForm({
       </div>
 
       {status === "error" && (
-        <p role="alert" className="mt-5 rounded-sm border border-[#a12b2b]/40 bg-[#a12b2b]/5 p-4 text-[0.95rem] text-[#7d1f1f]">
+        <p role="alert" className="mt-5 rounded-2xl border border-[#a12b2b]/40 bg-[#a12b2b]/5 p-4 text-[0.95rem] text-[#7d1f1f]">
           {serverError} You can also call{" "}
           <a href={site.phoneHref} className="font-semibold underline">
             {site.phone}
@@ -286,7 +286,7 @@ export function EnquiryForm({
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex min-h-14 items-center justify-center gap-2 rounded-sm bg-ink px-8 py-4 font-semibold text-paper transition-colors hover:bg-ink-3 disabled:opacity-70"
+          className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-paper transition-[background-color,transform,box-shadow] duration-200 ease-out-quart hover:-translate-y-0.5 hover:bg-ink-3 hover:shadow-lg hover:shadow-black/10 disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-none"
         >
           {status === "sending" ? (
             <>

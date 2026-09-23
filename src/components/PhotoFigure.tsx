@@ -17,7 +17,7 @@ export function PhotoFigure({
 }) {
   const photo = photos[image];
   return (
-    <figure className={cn("panel-stitch overflow-hidden rounded-sm bg-ink p-3 [--stitch-color:rgb(177_90_43/0.35)]", className)}>
+    <figure className={cn("panel-stitch overflow-hidden rounded-2xl bg-ink p-3 [--stitch-color:rgb(177_90_43/0.35)]", className)}>
       <Image
         src={photo.src}
         alt={photo.alt}
@@ -25,7 +25,7 @@ export function PhotoFigure({
         height={photo.height}
         sizes={sizes}
         priority={priority}
-        className="relative z-10 h-auto w-full rounded-[2px]"
+        className="relative z-10 h-auto w-full rounded-xl"
       />
       <figcaption className="relative z-10 px-2 pb-1 pt-4 text-sm text-[#cfc3b2]">{caption}</figcaption>
     </figure>

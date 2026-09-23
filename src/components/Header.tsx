@@ -72,73 +72,30 @@ export function Header() {
           <Logo />
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 xl:flex">
+        <nav aria-label="Primary" ref={dropRef} className="relative hidden items-center gap-1 xl:flex">
           {nav.main.map((item) =>
             "children" in item ? (
-              <div key={item.href} ref={dropRef} className="relative">
-                <button
-                  type="button"
-                  aria-expanded={open}
-                  aria-haspopup="true"
-                  onClick={() => setOpen((v) => !v)}
-                  className={cn(
-                    "flex items-center gap-1.5 whitespace-nowrap rounded-sm px-3 py-2 text-[0.92rem] font-medium transition-colors",
-                    isActive("/services") ? "text-copper" : "text-[#e6dccb] hover:text-copper",
-                  )}
-                >
-                  {item.label}
-                  <ChevronDown className={cn("size-4 transition-transform", open && "rotate-180")} aria-hidden="true" />
-                </button>
-                <AnimatePresence>
-                  {open && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -6 }}
-                      transition={{ duration: 0.18 }}
-                      className="panel-stitch absolute left-1/2 top-full mt-3 w-[34rem] -translate-x-1/2 rounded-sm bg-ink-2 p-7 shadow-2xl shadow-black/50 [--stitch-color:rgb(177_90_43/0.3)]"
-                    >
-                      <Link
-                        href="/services"
-                        className="mb-4 block text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-copper hover:text-copper-light"
-                      >
-                        All services →
-                      </Link>
-                      <ul className="grid grid-cols-2 gap-x-6 gap-y-1">
-                        {services.map((s) => (
-                          <li key={s.slug}>
-                            <Link
-                              href={`/services/${s.slug}`}
-                              className="flex items-center gap-3 rounded-sm px-2 py-2.5 text-[0.9rem] text-[#e6dccb] transition-colors hover:bg-ink-3 hover:text-copper-light"
-                            >
-                              <s.icon className="size-4 shrink-0 text-copper" aria-hidden="true" />
-                              {s.navLabel}
-                            </Link>
-                          </li>
-                        ))}
-                        {specialistLinks.map((s) => (
-                          <li key={s.href}>
-                            <Link
-                              href={s.href}
-                              className="flex items-center gap-3 rounded-sm px-2 py-2.5 text-[0.9rem] text-[#e6dccb] transition-colors hover:bg-ink-3 hover:text-copper-light"
-                            >
-                              <s.icon className="size-4 shrink-0 text-copper" aria-hidden="true" />
-                              {s.navLabel}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              <button
+                key={item.href}
+                type="button"
+                aria-expanded={open}
+                aria-haspopup="true"
+                onClick={() => setOpen((v) => !v)}
+                className={cn(
+                  "flex items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-[0.92rem] font-medium transition-colors hover:bg-white/[0.06]",
+                  isActive("/services") ? "text-copper" : "text-[#e6dccb] hover:text-copper",
+                )}
+              >
+                {item.label}
+                <ChevronDown className={cn("size-4 transition-transform", open && "rotate-180")} aria-hidden="true" />
+              </button>
             ) : (
               <Link
                 key={item.href}
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
-                  "whitespace-nowrap rounded-sm px-3 py-2 text-[0.92rem] font-medium transition-colors",
+                  "whitespace-nowrap rounded-full px-4 py-2 text-[0.92rem] font-medium transition-colors hover:bg-white/[0.06]",
                   isActive(item.href) ? "text-copper" : "text-[#e6dccb] hover:text-copper",
                 )}
               >
@@ -146,6 +103,51 @@ export function Header() {
               </Link>
             ),
           )}
+
+          <AnimatePresence>
+            {open && (
+              <div className="absolute left-1/2 top-full mt-3 w-[34rem] max-w-[calc(100vw-2.5rem)] -translate-x-1/2">
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.18 }}
+                  className="panel-stitch rounded-2xl bg-ink-2 p-7 shadow-2xl shadow-black/50 [--stitch-color:rgb(177_90_43/0.3)]"
+                >
+                <Link
+                  href="/services"
+                  className="mb-4 block text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-copper hover:text-copper-light"
+                >
+                  All services →
+                </Link>
+                <ul className="grid grid-cols-2 gap-x-6 gap-y-1">
+                  {services.map((s) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/services/${s.slug}`}
+                        className="flex items-center gap-3 rounded-xl px-2 py-2.5 text-[0.9rem] text-[#e6dccb] transition-colors hover:bg-ink-3 hover:text-copper-light"
+                      >
+                        <s.icon className="size-4 shrink-0 text-copper" aria-hidden="true" />
+                        {s.navLabel}
+                      </Link>
+                    </li>
+                  ))}
+                  {specialistLinks.map((s) => (
+                    <li key={s.href}>
+                      <Link
+                        href={s.href}
+                        className="flex items-center gap-3 rounded-xl px-2 py-2.5 text-[0.9rem] text-[#e6dccb] transition-colors hover:bg-ink-3 hover:text-copper-light"
+                      >
+                        <s.icon className="size-4 shrink-0 text-copper" aria-hidden="true" />
+                        {s.navLabel}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                </motion.div>
+              </div>
+            )}
+          </AnimatePresence>
         </nav>
 
         <div className="hidden items-center gap-2 xl:flex">
@@ -164,7 +166,7 @@ export function Header() {
             href={site.phoneHref}
             onClick={() => track("call_click", { label: "header-mobile" })}
             aria-label={`Call ${site.phone}`}
-            className="flex size-11 items-center justify-center rounded-sm border border-copper/60 text-copper"
+            className="flex size-11 items-center justify-center rounded-full border border-copper/60 text-copper"
           >
             <Phone className="size-5" aria-hidden="true" />
           </a>
@@ -174,7 +176,7 @@ export function Header() {
             aria-expanded={menu}
             aria-controls="mobile-menu"
             aria-label={menu ? "Close menu" : "Open menu"}
-            className="flex size-11 items-center justify-center rounded-sm bg-copper text-ink"
+            className="flex size-11 items-center justify-center rounded-full bg-copper text-ink"
           >
             {menu ? <X className="size-6" aria-hidden="true" /> : <Menu className="size-6" aria-hidden="true" />}
           </button>

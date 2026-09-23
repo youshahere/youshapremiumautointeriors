@@ -50,7 +50,7 @@ export default function AboutPage() {
 
       <section className="bg-paper">
         <Container className="py-16">
-          <div className="panel-stitch mx-auto max-w-4xl rounded-sm bg-ink p-10 text-center text-paper sm:p-14 [--stitch-color:rgb(177_90_43/0.4)]">
+          <div className="panel-stitch mx-auto max-w-4xl rounded-2xl bg-ink p-10 text-center text-paper sm:p-14 [--stitch-color:rgb(177_90_43/0.4)]">
             <p className="text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-copper">Brand purpose</p>
             <p className="mt-5 font-display text-2xl leading-snug sm:text-3xl">{heritage.purpose}</p>
           </div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
           </div>
 
           <Reveal>
-            <figure className="panel-stitch relative overflow-hidden rounded-sm bg-ink p-10 text-paper sm:p-12 [--stitch-color:rgb(177_90_43/0.4)]">
+            <figure className="panel-stitch relative overflow-hidden rounded-2xl bg-ink p-10 text-paper sm:p-12 [--stitch-color:rgb(177_90_43/0.4)]">
               <Watermark tone="copper" position="corner-br" className="size-56" />
               <Quote className="relative size-10 text-copper" aria-hidden="true" />
               <p className="mt-4 text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-copper">{familyMessage.heading}</p>

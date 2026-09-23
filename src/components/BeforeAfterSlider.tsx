@@ -24,17 +24,17 @@ export function BeforeAfterSlider({
   const id = useId();
   return (
     <figure>
-      <div className="ba-frame relative aspect-[4/3] w-full select-none overflow-hidden rounded-sm bg-ink">
+      <div className="ba-frame relative aspect-[4/3] w-full select-none overflow-hidden rounded-2xl bg-ink">
         <div className="absolute inset-0">
           <SeatPanel pattern={pattern} tone={tone} />
         </div>
         <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
           <SeatPanel pattern={pattern} tone={tone} worn />
         </div>
-        <span className="absolute left-3 top-3 rounded-sm bg-ink/80 px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-paper">
+        <span className="absolute left-3 top-3 rounded-full bg-ink/80 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-paper">
           Before
         </span>
-        <span className="absolute right-3 top-3 rounded-sm bg-copper px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-ink">
+        <span className="absolute right-3 top-3 rounded-full bg-copper px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-ink">
           After
         </span>
         <div

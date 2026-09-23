@@ -91,7 +91,7 @@ export default function ContactPage() {
       <section id="visit" className="scroll-mt-24 bg-paper">
         <Container className="py-20 sm:py-24">
           <SectionHeading eyebrow="Visit our workshop" title="Find us in Upper Worli." />
-          <div className="panel-stitch mt-10 overflow-hidden rounded-sm bg-ink p-3">
+          <div className="panel-stitch mt-10 overflow-hidden rounded-2xl bg-ink p-3">
             <iframe
               title={`Map showing ${site.name} at ${site.addressOneLine}`}
               src={mapSrc}

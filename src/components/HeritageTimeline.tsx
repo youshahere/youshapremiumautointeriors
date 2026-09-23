@@ -20,14 +20,14 @@ export function HeritageTimeline() {
               <span className="size-2 bg-ink" />
             </span>
             <Reveal className={`md:row-start-1 ${right ? "md:col-start-2" : "md:col-start-1"}`}>
-              <figure className="panel-stitch overflow-hidden rounded-sm bg-ink p-2 [--stitch-color:rgb(177_90_43/0.35)]">
+              <figure className="panel-stitch overflow-hidden rounded-2xl bg-ink p-2 [--stitch-color:rgb(177_90_43/0.35)]">
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   width={photo.width}
                   height={photo.height}
                   sizes="(min-width:768px) 40vw, 100vw"
-                  className="relative z-10 h-64 w-full rounded-[2px] object-cover sm:h-80"
+                  className="relative z-10 h-64 w-full rounded-xl object-cover sm:h-80"
                 />
               </figure>
             </Reveal>

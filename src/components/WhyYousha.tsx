@@ -26,7 +26,7 @@ export function WhyYousha({ condensed = false }: { condensed?: boolean }) {
                 <li key={item.title}>
                   <Reveal delay={(i % 3) * 0.07}>
                     <div className="flex gap-5">
-                      <span className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-ink text-copper">
+                      <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-ink text-copper">
                         <item.icon className="size-6 stroke-[1.5]" aria-hidden="true" />
                       </span>
                       <div>
@@ -41,14 +41,14 @@ export function WhyYousha({ condensed = false }: { condensed?: boolean }) {
           </div>
           {!condensed && (
             <Reveal delay={0.15} className="hidden lg:block">
-              <figure className="panel-stitch overflow-hidden rounded-sm bg-ink p-3 [--stitch-color:rgb(177_90_43/0.35)]">
+              <figure className="panel-stitch overflow-hidden rounded-2xl bg-ink p-3 [--stitch-color:rgb(177_90_43/0.35)]">
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   width={photo.width}
                   height={photo.height}
                   sizes="35vw"
-                  className="relative z-10 h-auto w-full rounded-[2px]"
+                  className="relative z-10 h-auto w-full rounded-xl"
                 />
               </figure>
             </Reveal>

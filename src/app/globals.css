@@ -29,6 +29,10 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
+  html,
+  body {
+    overflow-x: hidden;
+  }
   body {
     background: var(--color-stone);
     color: var(--color-ink);

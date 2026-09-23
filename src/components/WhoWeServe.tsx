@@ -18,7 +18,7 @@ export function WhoWeServe() {
           title="One family workshop, many kinds of customer."
           description="From a single car to a whole fleet, from a collector's classic to a rehabilitation clinic."
         />
-        <ul className="mt-12 grid gap-px overflow-hidden rounded-sm border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {whoWeServe.map((a, i) => (
             <li key={a.label} className="bg-ink-2">
               <Reveal delay={(i % 4) * 0.05} y={12} className="flex h-full items-center gap-4 p-6">

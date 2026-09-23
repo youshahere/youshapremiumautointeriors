@@ -23,7 +23,7 @@ function Tile({ item, onOpen }: { item: GalleryItem; onOpen: () => void }) {
     <button
       type="button"
       onClick={onOpen}
-      className="group relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-ink text-left"
+      className="group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl bg-ink text-left"
       aria-label={`Open ${item.title}, ${item.category}`}
     >
       <span className="relative block size-full transition-transform duration-500 ease-out-quart group-hover:scale-105">
@@ -71,7 +71,7 @@ function Lightbox({
       onClose={onClose}
       onClick={(e) => e.target === ref.current && onClose()}
       aria-label={`${item.title} — ${item.category}`}
-      className="m-auto w-[min(92vw,64rem)] max-w-none rounded-sm bg-ink p-0 text-paper backdrop:bg-black/85"
+      className="m-auto w-[min(92vw,64rem)] max-w-none rounded-2xl bg-ink p-0 text-paper backdrop:bg-black/85"
     >
       <div className="relative">
         <div className="relative aspect-[4/3] max-h-[75vh] w-full sm:aspect-[16/10]">
@@ -158,7 +158,7 @@ export function GalleryGrid() {
       </p>
 
       {items.length === 0 ? (
-        <p className="mt-10 rounded-sm border border-dashed border-ink/30 p-10 text-center text-muted">
+        <p className="mt-10 rounded-2xl border border-dashed border-ink/30 p-10 text-center text-muted">
           No projects in this category yet. Message us on WhatsApp and we will share recent work.
         </p>
       ) : beforeAfter ? (
@@ -196,7 +196,7 @@ export function GalleryPreview() {
         <ul className="-ml-5 flex">
           {preview.map((item) => (
             <li key={item.id} className="min-w-0 shrink-0 basis-[82%] pl-5 sm:basis-[46%] lg:basis-[32%]">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-ink">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-ink">
                 <Visual item={item} sizes="(min-width:1024px) 32vw, (min-width:640px) 46vw, 82vw" label />
                 <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12">
                   <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-copper-light">{item.category}</span>

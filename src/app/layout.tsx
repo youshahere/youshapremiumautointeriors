@@ -7,7 +7,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloatButton } from "@/components/WhatsAppFloatButton";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
-import { ScrollStitch } from "@/components/ScrollStitch";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -60,7 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <ScrollStitch />
         <Header />
         <main id="main">{children}</main>
         <Footer />
