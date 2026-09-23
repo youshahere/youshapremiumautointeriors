@@ -21,7 +21,7 @@ export function WhyYousha({ condensed = false }: { condensed?: boolean }) {
                   : "Nine reasons customers, fleets and clinics keep coming back to the same family."
               }
             />
-            <ul className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+            <ul className={`mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 ${condensed ? "lg:grid-cols-3" : ""}`}>
               {whyYousha.map((item, i) => (
                 <li key={item.title}>
                   <Reveal delay={(i % 3) * 0.07}>

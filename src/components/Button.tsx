@@ -6,7 +6,7 @@ import type { ComponentProps, ReactNode } from "react";
 import { cn, track } from "@/lib/utils";
 
 const button = cva(
-  "group/btn inline-flex items-center justify-center gap-2 rounded-sm font-semibold tracking-[0.01em] transition-[background-color,color,border-color,transform] duration-200 ease-out-quart active:translate-y-px focus-visible:outline-offset-4",
+  "group/btn inline-flex items-center justify-center gap-2 rounded-sm font-semibold tracking-[0.01em] transition-[background-color,color,border-color,transform,box-shadow] duration-200 ease-out-quart hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/10 active:translate-y-0 active:shadow-none focus-visible:outline-offset-4",
   {
     variants: {
       variant: {

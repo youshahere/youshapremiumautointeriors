@@ -1,10 +1,10 @@
-import Image from "next/image";
 import type { ReactNode } from "react";
 import { photos, type ImageKey } from "@/data/images";
 import { Container } from "@/components/Container";
 import { StampSeal } from "@/components/StampSeal";
 import { Watermark } from "@/components/Watermark";
 import { Reveal } from "@/components/Reveal";
+import { HeroPhoto } from "@/components/HeroPhoto";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -35,8 +35,7 @@ export function Hero({ eyebrow, title, sub, actions, trust, size = "page", image
           aria-hidden="true"
           className="absolute inset-y-0 right-0 w-full opacity-55 [mask-image:linear-gradient(to_right,transparent,black_55%)] lg:w-[68%] lg:opacity-100"
         >
-          <Image src={photo.src} alt="" fill priority sizes="(min-width:1024px) 68vw, 100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-ink/35" />
+          <HeroPhoto photo={photo} priority />
         </div>
       )}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
